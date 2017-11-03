@@ -1,0 +1,386 @@
+*{margin:0px;padding:0px;}
+ul,li{list-style: none;}
+.left{float: left;}
+.right{float: right;}
+body{font-family: "微软雅黑";}
+.container{
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 1200px;
+}
+.home-banner2{
+	background-color: #FAFAFA;
+	padding-bottom: 30px;
+}
+.home_active{
+	color: #0396ff;
+}
+.home_banner{
+	position: relative;
+	width: 226px;
+	height: 500px;
+}
+.home_banner_nav{
+	width: 226px;
+	height: 50px;
+	position: absolute;
+	top: -50px;
+	background-color: #0396FF;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 50px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.home_banner_about{
+	height: 45px;
+	line-height: 45px;
+	color: #666;
+	font-size: 14px;
+}
+.home_banner_dao{
+	background-color: white;
+	border: 1px solid #EEEEEE;
+	font-size: 12px;
+	border-radius: 4px;
+}
+.home_banner_help{
+	padding-bottom: 15px;
+	padding-top: 15px;
+	text-align: center;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 0px;
+}
+.home_banner_help li:nth-child(1){
+	color: #333;
+	font-size: 18px;
+}
+.home_banner_box{
+	padding:1px;
+	height: 387px;
+}
+.home_banner_help li:nth-child(2){
+	color: #999;
+}
+.home_banner_title{
+	margin-top: 25px;
+	margin-left: 48px;
+	height: 30px;
+	width: 226px;
+}
+.home_banner_title div:nth-child(1){
+	margin-top: 2px;
+}
+.home_banner_title div:nth-child(2){
+	margin-left: 10px;
+	font-size: 18px;
+	color: #333;
+}
+.home_banner_we{
+	margin-left: 75px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #333;
+}
+.home_banner_we li{cursor:pointer;}
+.home_banner_we li:hover{
+	color: #0396FF;
+}
+.home_section{
+	padding: 10px;
+	margin-left: 10px;
+	width: 80%;
+	border: 1px solid #EEEEEE;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	display: block;
+}
+.home_section_title{
+	width: 100%;
+	font-size: 28px;
+	color: #333;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.home_section_content{
+	width: 100%;
+	height: 348px;
+	background-color: pink;
+}
+.home_section_text{
+	font-size: 12px;
+	color: #333;
+	line-height: 20px;
+	padding-top: 10px;
+}
+/*—————————————————企业文化开始———————————————*/
+.culture{
+	padding: 15px;
+	background-color: white;
+	border: 1px solid #DCDCDC;
+	width: 80%;
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	display: none;
+}
+.culture_title{
+	font-size: 28px;
+	color: #333;
+	width:100%;
+	text-align: center;
+	margin-top: 17px;
+}
+.culture_banner{
+	width: 100%;
+	margin-top: 10px;
+	height: 300px;
+}
+.culture_banner_img{
+	float: left;
+	width: 287px;
+	height: 287px;
+}
+.culture_banner_content{
+	float: left;
+	font-size: 12px;
+	color: #333;
+	margin-left: 24px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 65%;
+	text-indent: 2em;
+	line-height: 22px;
+}
+.culture_subtitle{
+	width: 100%;
+	height: 148px;
+	background-color: #0396FF;
+	text-align: center;
+	color: white;
+	font-size: 36px;
+	margin-top: 10px;
+	line-height: 146px;
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	z-index: 2;
+}
+.culture_subtitle_img{
+	position: relative;
+}
+.culture_subtitle_img2{
+	width: 100%;
+	height: 1132px;
+	background: url("../images/wenhua4.png") no-repeat center;
+	background-size: cover;
+}
+/*—————————————————企业文化结束———————————————*/
+.vision{
+	padding: 10px;
+	width: 80%;
+	border: 1px solid #EEEEEE;
+	border-radius: 4px;
+	background-color: white;
+	margin-left: 10px;
+	display: none;
+}
+.vision_content{
+	color: white;
+	background:url("../images/gsyj.png") no-repeat center;
+	width: 100%;
+	height: 72px;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 72px;
+}
+.vision_banner{
+	width: 100%;
+	padding-top: 30px;
+	height: 296px;
+}
+.vision_banner_one{
+	text-align: center;
+	color: #333;
+	margin-left: 188px;
+}
+.vision_banner_one div:nth-child(1){
+	font-size: 18px;
+}
+.vision_banner_one div:nth-child(2){
+	width: 30px;
+	height: 1px;
+	background-color: #0396ff;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 62px;
+}
+.vision_banner_two{
+	text-align: center;
+	color: #333;
+	margin-left: 90px;
+}
+.vision_banner_two div:nth-child(1){
+	font-size: 18px;
+}
+.vision_banner_two div:nth-child(2){
+	width: 30px;
+	height: 1px;
+	background-color: #0396ff;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 27px;
+}
+.vision_banner_three{
+	text-align: center;
+	color: #333;
+	margin-left: 135px;
+}
+.vision_banner_three div:nth-child(1){
+	font-size: 18px;
+}
+.vision_banner_three div:nth-child(2){
+	width: 30px;
+	height: 1px;
+	background-color: #0396ff;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 43px;
+}
+/*—————————————————商业洽谈开始———————————————*/
+.business{
+	padding: 15px;
+	background-color: white;
+	border: 1px solid #DCDCDC;
+	width: 80%;
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	display: none;
+}
+.business_img{
+	width: 100%;
+	height: 345px;
+	background-color: pink;
+}
+.business_foot{
+	font-size: 14px;
+	color:#0396ff;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 17px;
+	margin-bottom: 5px;
+}
+/*—————————————————商业洽谈结束———————————————*/
+/*—————————————————我要留言开始———————————————*/
+.message{
+	padding: 15px;
+	background-color: white;
+	border: 1px solid #DCDCDC;
+	width: 80%;
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	height: 460px;
+	display: none;
+}
+.message_have{
+	font-size: 12px;
+	color: #0396ff;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	outline: none;
+}
+.message_content textarea{
+	width: 100%;
+	height: 200px;
+	border: 1px solid #EEEEEE;
+	border-radius: 4px;
+	outline: none;
+	padding: 10px;
+	text-indent: 1em;
+}
+.message_btn{
+	width: 100%;
+	height: 40px;
+	margin-top: 10px;
+}
+.message_btn input{
+	float: right;
+	color: white;
+	background-color: #0396ff;
+	width: 120px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	border-radius: 4px;
+}
+/*—————————————————我要留言结束———————————————*/
+/*常见问题开始*/
+.question{
+	padding: 15px 15px 15px 40px;
+	background-color: white;
+	border: 1px solid #DCDCDC;
+	width: 80%;
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	color: #333;
+	font-size: 12px;
+	line-height: 25px;
+	display: none;
+}
+/*常见问题结束*/
+/*商家入驻开始*/
+.join{
+	padding: 15px 15px 15px 40px;
+	background-color: white;
+	border: 1px solid #DCDCDC;
+	width: 80%;
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	color: #333;
+	font-size: 12px;
+	line-height: 25px;
+	display: none;
+}
+.join_fu{margin-top: 20px;}
+.join_proce{margin-top: 25px;}
+.join_ul{text-indent: 2em;}
+/*商家入驻结束*/
+/*加入我们开始*/
+.settled_banner{
+	padding: 15px;
+	background-color: white;
+	border: 1px solid #DCDCDC;
+	width: 80%;
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	display: none;
+}
+.settled{
+	margin-left: 20px;
+	margin-top: 25px;
+}
+.settled_ask{
+	color: #0396ff;
+	font-size: 16px;
+}
+.settled_fu,.settled_fu li{
+	font-size: 12px;
+	color: #333;
+	line-height: 25px;
+}
+/*加入我们结束*/
+
+
+
+
+
+

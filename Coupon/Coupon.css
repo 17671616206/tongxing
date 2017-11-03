@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*public*/
+*{margin:0px; padding:0px; }
+body{font-size:12px; font-family:'微软雅黑';color:#333333; background:#FAFAFA;}
+.wrap_a{width:1200px; margin:0px auto;}
+ul{list-style:none;}
+a{text-decoration:none;}
+a:focus, a:hover{text-decoration: none;}
+.clearfix:after{content:"";display:block;height:0px;line-height:0px;clear:both; visibility:hidden;}
+.clearfix {zoom:1;}
+.left{float:left;}
+.right{float:right;}
+
+/*Coupon*/
+.Coupon_a{width:100%; background:red url(../images/banner2.png) no-repeat center;background-size: cover; height:500px;}
+
+/*Coupon_b*/
+.Coupon_b{height:60px; background:green; border-radius:5px; overflow:hidden; margin-top:-30px;}
+.Coupon_b>ul>li{width:119px; height:100%; line-height:60px; float:left; text-align:center; background:#fff;border-left:1px solid #EEEEEE;}
+.Coupon_b>ul>li>a{font-size:15px; color:#333;}
+.Coupon_b>ul>li.active{background:#0396ff;}
+.Coupon_b>ul>li.active>a{color:#fff;}
+.Coupon_b>ul>li.more>span{display:inline-block; width:20px; height:20px; background:url(../images/gengduofenlei.png) no-repeat center; vertical-align:middle; margin-top:-7px; margin-left:5px;}
+
+/*Coupon_c*/
+.Coupon_c{position:relative; text-align:center;padding-top: 10px;}
+.Coupon_clist{width:100%;}
+.Coupon_clist>li{float:left; width:32%; height:191px; margin:10px 5px 0px; color:#fff;}
+.Coupon_clistL{width:193px; height:100%; background:url(../images/youhuiquanzuo.png) no-repeat center;}
+.Coupon_clistM{width:160px; height:100%; background:url(../images/kaibangongsi.png) no-repeat center;}
+.Coupon_clistR{width:2px; height:100%; background:#0396ff;}
+.Coupon_cLcon{width:152px;margin-left:20px;  height:100%;}
+.Coupon_cLcon>p:nth-child(1){height:67px; border-bottom:1px dashed #fff; font-size:18px;  line-height:74px;}
+.Coupon_cLcon>p:nth-child(1)>strong{font-size:36px; font-weight:normal;}
+.Coupon_cLcon>p:nth-child(1)>span{font-size:12px;}
+.Coupon_cLcon_p2{width:100%; height:40px; margin:14px 0px 20px; font-size:14px;}
+.hengxian{width:100%; height:8px; background:rgba(255,255,255,.5); border-radius:4px; position:relative;}
+.hengxian2{width:32%; height:8px; background:#fff; position:absolute; left:0px; top:0px;  border-radius:4px;}
+.Coupon_cLcon_p3{margin-top:10px;}
+.pagenum{height:35px; margin-top:10px;text-align:center;line-height:35px; display:inline-block;}
+.pagenum>div:nth-child(1),.pagenum>div:nth-child(3){width:60px; background:#EEEEEE; border:1px solid #999; border-radius:5px; cursor:pointer;}
+.pagenum>div:nth-child(1)>a,.pagenum>div:nth-child(3)>a{color: #333;}
+.pagenum>div:nth-child(3){margin-left:10px;}
+.pagenum>ul>li{height:35px;width:35px; background:#EEEEEE; border:1px solid #999; border-radius:5px; float:left; margin-left:10px; cursor:pointer;}
+.pagenum>ul>li>a{color: #333;}
+.pagetext{ margin-left:10px;}
+.pagetext input{width:30px; height:20px; text-align:center;margin-right: 5px;margin-left: 5px;}
+.pagetext .btn{margin-left: 10px;}
+
+

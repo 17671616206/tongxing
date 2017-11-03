@@ -1,0 +1,81 @@
+*{margin:0px;padding:0px;}
+ul,li{list-style: none;}
+body{font-family: "微软雅黑";}
+.left{float: left;}
+.right{float: right;}
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1200px;
+}
+.mation{
+    background-color: #FAFAFA;
+    padding-bottom: 30px;
+}
+.home_banner_about{
+    height: 45px;
+    line-height: 45px;
+    color: #666;
+    font-size: 14px;
+}
+.home_banner_dao{
+    background-color: white;
+    border: 1px solid #EEEEEE;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.home_section{
+    font-size: 14px;
+    width: 76%;
+    margin-left: 10px;
+    float: left;
+}
+.personal_img{
+    width: 85px;
+    height: 85px;
+    background-color: lightcoral;
+}
+label{font-weight: normal;}
+.service{color: #478cc9;}
+.service_area{
+    width: 100%;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.service_tel{
+    width: 50%;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0px 10px;
+}
+.service_tel2{
+    width: 20%;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0px 10px;
+}
+.service_sele{
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.service_di{color: #FC6210;font-weight: bold;}
+.store_td1{height: 45px;}
+.store_list_img{width: 60px;height: 60px;}
+.yg5_tabel{border-color: #e5e5e5;outline: 1px solid #e5e5e5;margin-top: 10px;}
+.yg5_tr2>td{padding: 5px 15px;border: 1px solid #e5e5e5;}
+.yg5_tr1>td{
+    border: 1px solid #e5e5e5;
+    padding-left: 15px;
+    background-color: #FAFAFA;
+    font-weight: bold;
+}
+
+
+
+
+

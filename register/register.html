@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../page/pager.css" />
+    
+    <link rel="stylesheet" href="register.css"/>
+    <link rel="stylesheet" href="../css/headandfoot.css"/>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+   
+    <script src="../page/pager.js"></script>  
+     <script src="register.js"></script>
+</head>
+<body>
+<script>
+	
+
+</script>
+
+    <div id="header"></div>
+<!--—————————————内资公司注册内容开始—————————————-->
+<div class="col-md-12 register">
+    <div class="container">
+        <div class="register_header">
+        	<ul>
+        		
+        	</ul>
+        </div>
+        <div class="register_nav">
+
+        </div>
+        <div class="sort">
+            <div class="left">
+                <ul class="sort_compre">
+                    <li index="a" class="sort_color">综合<span class="glyphicon glyphicon-arrow-down"></span></li>
+                    <li index="score_down">评价<span class="glyphicon glyphicon-arrow-down"></span></li>
+                    <li index="time_down">新品<span class="glyphicon glyphicon-arrow-down"></span></li>
+                    <li index="volume_down">销售<span class="glyphicon glyphicon-arrow-down"></span></li>
+                    <li index="price_down" style="border: none;">价格<span class="glyphicon glyphicon-arrow-down"></span></li>
+                </ul>
+                <ul class="sort_serve">
+					<select style="height: 40px;color: #666666;border: 1px solid #DCDCDC;box-shadow: 0 0 0 0;">
+						<option selected="" index="2">请选择</option>
+					</select>
+                </ul>
+                <ul class="sort_please">
+                    <li class="sort_please_input">
+                        <input class="minprice" type="text" placeholder="¥请输入"/>
+                    </li>
+                    <li class="sort_please_xian">-</li>
+                    <li class="sort_please_input">
+                    	<input class="maxprice" type="text" placeholder="¥请输入"/>
+                    </li>
+                   
+                </ul>
+                 <a style="line-height: 25px;margin-left: 5px;color: #666666;" href="javascript:;" class="btn btn-default queren">确认</a>
+                <!--<div class="discount">
+                    <input type="checkbox"/>
+                    <span>折扣</span>
+                    <span>更多</span>
+                    <span class="glyphicon glyphicon-menu-down"></span>
+                </div>-->
+            </div>
+            <div class="right page_right">
+                <div class="left"><span class="span1">1</span>/<span class="span2">100</span></div>
+                <div class="page_box pageleft"><span class="glyphicon glyphicon-menu-left"></span></div>
+                <div class="page_box pageright"><span class="glyphicon glyphicon-menu-right"></span></div>
+            </div>
+        </div>
+        <!--产品详情-->
+        <div class="product">
+
+        </div>
+        <!--分页-->
+
+    </div>
+        <div class="wrap_a page">
+			<ul class="pagination" id="page1"></ul>
+        </div>
+</div>
+<!--—————————————内资公司注册内容结束—————————————-->
+<div id="footer"></div>
+<form id="this_from" style="">
+	<input name="order"/>
+	<input name="class_id"/>
+	<input name="region"/>
+	<input name="min_price"/>
+	<input name="max_price"/>
+	<div id="attribute_div"></div>
+	<!--<input name="attribute[]" value="1">
+	<input name="attribute[]" value="2">-->
+</form>
+<button>确认</button>
+<script>
+//	$(function(){		
+//		$("button").click(function(){
+//			var form = $("form").serialize()
+//			console.log(form)
+//		})
+//	})
+	
+</script>
+</body>
+</html>

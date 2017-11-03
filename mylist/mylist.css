@@ -1,0 +1,81 @@
+*{margin:0px;padding:0px;}
+ul,li{list-style: none;}
+body{font-family: "微软雅黑";}
+.left{float: left;}
+.right{float: right;}
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1200px;
+}
+.mation{
+    background-color: #FAFAFA;
+    padding-bottom: 30px;
+}
+.home_banner_about{
+    height: 45px;
+    line-height: 45px;
+    color: #666;
+    font-size: 14px;
+}
+.home_banner_dao{
+    background-color: white;
+    border: 1px solid #EEEEEE;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.home_section{
+    font-size: 14px;
+    width: 76%;
+    margin-left: 10px;
+    float: left;
+}
+.safe_mar{margin-bottom: 5px;}
+a{color: #333;}
+a:hover{color: #478cc9;text-decoration: none;}
+.mylist{color: #478cc9;}
+.nav-tabs>li>a:hover{
+    color: #478cc9;
+    border-color: #478cc9;
+    background-color: white;
+}
+.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover{
+    background-color: #478cc9;
+    color: white;
+    border-color: #478cc9;
+}
+.nav.nav-tabs{border-color: #478cc9;margin-top: 30px;margin-bottom: 30px;}
+.list_wai{padding: 0px;font-size: 11px;}
+.list_wai>li{padding: 0px;text-indent: 1em;height: 35px;background-color: #F5F5F5;line-height: 35px;}
+.list_wai1{margin-bottom: 15px;}
+.list_wai2{padding: 0px;border: 1px solid #ccc;background-color: #F5F5F5;margin-bottom: 15px;}
+.list_content{padding: 0px;background-color: white;height: 95px;font-size: 11px;}
+.list_content>li{height: 95px;}
+.list_content1>li:nth-child(1){color: #999999;}
+.list_content_imgz{
+    width: 60px;
+    height:92px;
+    float: left;
+    padding-top: 15px;
+}
+.list_content_img{
+    width: 60px;
+    height:60px;
+}
+.list_content_text{
+    padding-top: 25px;
+    width: 185px;
+    height: 92px;
+    margin-left: 15px;
+    float: left;
+}
+.list_content>li:nth-child(2){color: #999999;padding-top: 25px;}
+.list_content>li:nth-child(3){padding-top: 25px;border-right: 1px solid #ccc;}
+.list_content>li:nth-child(4){padding-top: 25px;border-right: 1px solid #ccc;}
+.list_content>li:nth-child(5){padding-top: 25px;border-right: 1px solid #ccc;}
+.list_content>li:nth-child(6){padding-top: 25px;border-right: 1px solid #ccc;}
+
+
+
+
+

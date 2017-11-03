@@ -1,0 +1,162 @@
+*{margin:0px;padding:0px;}
+ul,li{list-style: none;}
+body{font-family: "微软雅黑";}
+.left{float: left;}
+.right{float: right;}
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1200px;
+}
+.mation{
+    background-color: #FAFAFA;
+    padding-bottom: 30px;
+}
+.home_banner_about{
+    height: 45px;
+    line-height: 45px;
+    color: #666;
+    font-size: 14px;
+}
+.home_banner_dao{
+    background-color: white;
+    border: 1px solid #EEEEEE;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/*———————右边版块开始—————————*/
+.home_section{
+    width: 76%;
+    display: block;
+}
+.user_list{height: 100px;width: 100%;padding: 0px;}
+.user_list>li{height: 100px;padding-right: 0px;}
+.user_list>li>div{
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    background-color: white;
+    height: 99px;
+    padding: 15px;
+}
+.list_img{background-color: orange;width: 70px;height: 70px;border-radius: 50%;}
+.list_title{font-size: 16px;margin-top: 6px;}
+.list_text{font-size: 22px;font-weight: bold;margin-top: 6px;}
+.list_text1{color: #01C353;}
+.list_text2{color: #FFB400;}
+.list_text3{color: #F96B69;}
+.list_text4{color: #478cc9;}
+.user_yue{margin-top: 10px;height: 77px;padding-right: 0px;background-color: white;border: 1px solid #EEEEEE;border-radius: 4px;}
+.user_yue>li{padding: 15px;}
+.yue_left{float:left;width: 40px;height: 40px;border: 1px solid #FF6163;border-radius: 50%;text-align: center;line-height: 40px;color: #FF6163;font-size: 18px;font-weight: bold;}
+.yue_right{float: left;margin-left: 10px;line-height: 40px;height: 40px;font-size: 14px;}
+.yue_right>span:nth-child(2){color: #ff6161;}
+.user_order1{
+    padding: 10px;
+    border: 1px solid #EEEEEE;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+.user_order2{
+    border-bottom: 1px solid #EEEEEE;
+    padding: 10px 0px;
+    height: 36px;
+}
+a{color: #478cc9;}
+a:hover{color: #478cc9;text-decoration: none;}
+.user_order_title{
+    height: 16px;
+    padding-left: 6px;
+    border-left: 3px solid #478cc9;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    float: left;
+}
+.order_info{margin-top: 10px;}
+.order_info_li{
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    height: 90px;
+    width: 100%;
+    overflow: hidden;
+}
+.info_title{
+    background-color: #D4EEFF;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #999999;
+    padding: 0px 10px;
+}
+.info_title2{margin-left: 20px;}
+.info_tabel{height: 60px;width: 100%;padding: 10px;}
+.info_tabel>li{height: 40px;text-align: center;float: left;}
+.info_tabel>li:nth-child(1){width: 170px;border-right: 1px solid #EEEEEE;}
+.info_tabel>li:nth-child(2){width: 180px;border-right: 1px solid #EEEEEE;line-height: 40px;text-align: center;}
+.info_tabel>li:nth-child(3){width: 99px;border-right: 1px solid #EEEEEE;line-height: 40px;}
+.info_tabel>li:nth-child(4){width: 178px;border-right: 1px solid #EEEEEE;line-height: 40px;}
+.info_tabel>li:nth-child(5){width: 185px;line-height: 40px;position: relative;padding: 10px 15px 0px;}
+.info_tabel_img{width: 40px;height: 40px;border-radius: 4px;float: left;}
+.info_tabel_text{float: left;margin-left: 6px;color: #999999;}
+.tabel_info1{border: 1px solid #478cc9;background-color: #478cc9;color: white;}
+.tabel_info2{border: 1px solid #EEEEEE;background-color: #F1F1F1;color: #999999;margin-left: 10px;}
+.info_tabel>li:nth-child(5)>div{
+    height:22px;
+    border-radius: 4px;
+    display: inline-block;
+    width: 70px;
+    line-height: 22px;
+    float: left;
+    cursor: pointer;
+}
+.product{
+    width: 100%;
+    padding: 5px;
+}
+.product_box{
+    width: 205px;
+    height: 238px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #DCDCDC;
+    overflow: hidden;
+    margin-right: 11px;
+    float: left;
+    margin-top: 10px;
+}
+.product_img{
+    width: 205px;
+    height: 158px;
+    background-color: pink;
+}
+.product_img img{
+    width: 205px;
+    height: 158px;
+}
+.product_bottom_box{
+    padding: 5px 10px 10px;
+}
+.product_money{
+    font-size: 12px;
+    color:#ff6161;
+}
+.product_red{
+    font-size: 18px;
+    font-weight: bold;
+}
+.product_cancel{
+    font-size: 14px;
+    color: #333333;
+}
+.product_grey{
+    font-size: 12px;
+    color: #999;
+}
+.product_blue{
+    font-size: 12px;
+    color: #0396ff;
+    margin-left: 5px;
+}
