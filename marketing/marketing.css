@@ -1,0 +1,142 @@
+*{margin:0px;padding:0px;}
+ul,li{list-style: none;}
+body{font-family: "Î¢ÈíÑÅºÚ";}
+.left{float: left;}
+.right{float: right;}
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1200px;
+}
+.register{
+    background-color: #EBF7FB;
+    padding: 0px 0px 60px;
+}
+.carousel{height: 500px;padding: 0px;margin-top: -10px;}
+.item,.carousel-inner{height: 500px;}
+.zheng{
+    background-color: white;
+    padding: 0px 0px 60px;
+}
+.caishui_add{
+    display: inline-block;
+    position: absolute;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    font-size: 50px;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+    opacity: 0.8;
+}
+.caishui_add:hover{text-decoration: none;color: white;opacity: 1;}
+.add_left{left: 10%;}
+.add_right{right:10%;}
+.carousel-indicators>.active{margin-right: 10px;}
+.carousel-indicators>li{margin-right: 10px;}
+.zhunbei{padding: 0px;height: 246px;}
+.zhunbei>li{height: 246px;width: 390px;padding-right: 15px;padding-left: 0px;}
+.zhunbei_bot{text-align: center;font-size: 24px;color: #FFFFFF;width: 100%;height: 54px;line-height: 54px;}
+.zhunbei_bot1{background-color: #F27A6C;}
+.zhunbei_bot2{background-color: #1DCB2A;}
+.zhunbei_bot3{background-color: #FCD002;}
+.zhunbei_wai{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.zhunbei_wai:hover{
+    -webkit-box-shadow: 0px 0px 15px #666;
+    -o-box-shadow: 0px 0px 15px #666;
+    -ms-box-shadow: 0px 0px 15px #666;
+    -moz-box-shadow: 0px 0px 15px #666;
+    box-shadow: 0px 0px 15px #666;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.zheng_img,.zheng_img>img{width: 100%;height: 207px;}
+.zheng_img,.ziliao_img{padding: 0px;}
+.xian{height: 142px;width: 315px;margin: 0px auto;}
+.xian2{height: 142px;width: 580px;margin: 0px auto;}
+.xian3{height: 142px;width: 320px;margin: 0px auto;}
+.xian4{height: 142px;width: 390px;margin: 0px auto;}
+.xian5{height: 142px;width: 445px;margin: 0px auto;}
+.xian4>div,.xian5>div,.xian3>div,.xian2>div,.xian>div{float: left;}
+.xian5>div:nth-child(2),.xian4>div:nth-child(2),.xian3>div:nth-child(2),.xian2>div:nth-child(2),.xian>div:nth-child(2){line-height: 140px;margin: 0px 10px;font-size: 32px;font-weight: bold;color: #666666;}
+.caishui_xian{width: 82px;height: 2px;background-color: #666666;margin-top: 70px;}
+.zhunbei_img,.zhunbei_img>img{width: 100%;height: 193px;}
+.fuwu_img1{text-align: center;}
+.fuwu_img{margin-bottom: 60px;text-align: center;}
+.fuwu_cont{font-size: 20px;text-indent: 2em;width: 100%;margin-top: 0px;}
+.zuijin{
+    width: 100%;
+    height: 323px;
+    margin: 13px auto;
+}
+.zuijin>a>li{
+    float: left;
+    width: 389px;
+    height: 323px;
+    padding: 80px 25px 25px;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.zuijin>a>li:nth-child(1){
+    background:url("../images/xukezheng-fuwu-img1.jpg") no-repeat center;
+}
+.zuijin>a>li:nth-child(2){
+    background:url("../images/xukezheng-fuwu-img2.jpg") no-repeat center;
+}
+.zuijin>a>li:nth-child(3){
+    background:url("../images/xukezheng-fuwu-img3.jpg") no-repeat center;
+}
+.zuijin>a>li:hover{
+    opacity: 0.8;
+}
+.yange{
+    width: 796px;
+    height: 323px;
+    margin: 13px auto;
+}
+.yange>a>li{
+    width: 389px;
+    height: 323px;
+    padding: 80px 25px 25px;
+    float: left;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    cursor: pointer;
+}
+.yange>a>li:hover{
+    opacity: 0.8;
+}
+.yange>a>li:nth-child(1){
+    background:url("../images/xukezheng-fuwu-img5.jpg") no-repeat center;
+}
+.yange>a>li:nth-child(2){
+    background:url("../images/xukezheng-fuwu-img6.jpg") no-repeat center;
+}
+.font1{font-size: 30px;}
+.font2{font-size: 18px;margin-top: 25px;}
+
+
+
+
+
+
+
+
