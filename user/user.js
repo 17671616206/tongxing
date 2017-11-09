@@ -28,4 +28,127 @@ $(function(){
     //        '<span class="product_grey">成交量</span><span class="product_blue">'+data[i].num+'笔</span></div></div>')
     //    }
     //}
-})
+});
+
+
+
+
+
+
+
+
+
+function GetQueryString(name)
+{
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)return  unescape(r[2]); return null;
+}
+
+var user_id=GetQueryString("user_id");
+if(user_id==undefined){
+    user_id=1
+}
+
+
+//首页个人信息部分
+$.ajax({
+    type:"post",
+    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeOne",
+    dataType:"text",
+    data:{user_id:user_id},
+    success:function(data){
+        var data = eval('(' + data + ')');//把字符串转化为数组
+        //console.log(data.userimg);
+        $(".user_camera>a").html('<img src="'+data.userimg+'" class="picter">');
+        $(".came_right>div").eq(0).text(data.username);
+        if(data.vip==0){
+            $(".came_text").text("Vo 普通会员");
+        }else{
+            $(".came_text").text(data.vip+"级会员");
+        }
+            var num=data.infolist+"%";
+        $(".progress-bar").css({width:num});
+        $(".came_num").eq(0).text(num);
+        $(".list_text1").text(data.orderall);
+        $(".list_text2").text(data.waitpay);
+        $(".list_text3").text(data.paying);
+        $(".list_text4").text(data.finished);
+        $(".yue_right>span").eq(1).text("￥"+data.least);
+        $(".yue_right>span").eq(3).text(data.point+"分");
+        $(".yue_right>span").eq(5).text(data.coupons+"张");
+        var a=data.safe;
+        a=eval('(' + a + ')');
+        $(".came_self").html("").append("<span>账户安全：</span>");
+        if(a.phone!==undefined){
+            $(".came_self").append('<img src="../images/shouji1.png">')
+        }
+        if(a.wechat_openid!==undefined){
+            $(".came_self").append('<img src="../images/ymima1.png">')
+        }
+        if(a.email!==undefined){
+            $(".came_self").append('<img src="../images/youxiang1.png">')
+        }
+
+    },
+    error:function(data){
+        console.log("错误的"+data)
+    }
+});
+
+
+
+
+
+//首页我的订单部分
+$.ajax({
+    type:"post",
+    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeTwo",
+    dataType:"text",
+    data:{user_id:user_id},
+    success:function(data){
+        var data = eval('(' + data + ')');//把字符串转化为数组
+        for (var j = 0; j < data.length; j++) {
+            //console.log(j);
+            var time=data[j].ordertime;
+            var order=data[j].ordernum;
+            var orderli=$('<li class="order_info_li"><div class="info_title"><div class="left"><span>下单时间：'+time+'</span><span class="info_title2">订单编号：'+order+'</span></div><a class="right" href="javascript:void(0);">查看详情</a></div><ul class="info_tabel"><li><img class="info_tabel_img" src="../images/zhongshang.png" alt=""/><div class="info_tabel_text"><div><a href="javascript:void(0);">'+data[j].goodsname+'</a></div><div>'+data[j].goodsinfo+'</div></div></li><li>'+data[j].place+'</li><li>代付款</li><li>订单总价：<span style="color: #ff6161;">¥'+data[j].price+'</span></li><li><div href="" class="tabel_info1">立即付款</div><div href="" class="tabel_info2">取消订单</div></li></ul></li>');
+            $(".order_info").append(orderli);
+        }
+
+    },
+    error:function(data){
+        console.log("错误的"+data)
+    }
+});
+
+
+
+
+
+//首页我的收藏部分
+var region=1
+$.ajax({
+    type:"post",
+    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeThree",
+    dataType:"text",
+    data:{
+        user_id:user_id,
+        region:region
+    },
+    success:function(data){
+        var data = eval('(' + data + ')');//把字符串转化为数组
+        var product=$(".product").eq(0);
+        for (var k = 0; k < data.length; k++) {
+            var imgg=data[k].goodsimg;
+            imgg=eval('(' + imgg + ')');
+            imgg=imgg[0];
+            var contains=$('<div class="product_box"><a href="../company/company.html?goods_id='+data[k].goodsid+'" style="display: inline-block;width: 100%;height: 100%"><div class="product_img"><img src="'+imgg+'" alt=""/></div><div class="product_bottom_box"><div class="product_money">¥<span class="product_red">'+data[k].price+'</span>起</div><div class="product_cancel">'+data[k].goodsname+'</div><div><span class="product_grey">成交量</span><span class="product_blue">'+data[k].solled+'笔</span></div></div></a></div>');
+            $(product).append(contains);
+
+        }
+    },
+    error:function(data){
+        console.log("错误的"+data)
+    }
+});

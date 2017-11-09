@@ -59,3 +59,44 @@ $(function(){
     });
 
 });
+
+
+//console.log(Request.UserHostAddress.ToString());
+
+var name,password;
+
+$("body").ready(function(){
+    console.log(22);
+    $(".user_input").eq(0).on("blur",function(){
+        console.log($(this).val());
+        name=$(this).val();
+    })
+    $(".user_input").eq(1).on("blur",function(){
+        console.log($(this).val());
+        password=$(this).val();
+    });
+    //获取到name和passsword
+    $("#loginbtn").on("click",function(){
+        console.log(name+"+"+password);
+        $.ajax({
+            type:"post",
+            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=orderCenter",
+            dataType:"text",
+            data:{
+                name:name,
+                password:password
+            },
+            success:function(data){
+                var data = eval('(' + data + ')');//把字符串转化为数组
+
+
+
+
+            },
+            error:function(data){
+                console.log("错误的"+data)
+            }
+        });
+
+    });
+})

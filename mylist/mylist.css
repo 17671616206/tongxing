@@ -34,12 +34,17 @@ body{font-family: "微软雅黑";}
 a{color: #333;}
 a:hover{color: #478cc9;text-decoration: none;}
 .mylist{color: #478cc9;}
-.nav-tabs>li>a:hover{
+.nav-tabs>li{
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nav-tabs>li:hover{
     color: #478cc9;
     border-color: #478cc9;
-    background-color: white;
+    /*background-color: white;*/
 }
-.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover{
+.nav-tabs > li.active,.nav-tabs > li.active:hover{
     background-color: #478cc9;
     color: white;
     border-color: #478cc9;

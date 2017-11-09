@@ -7,3 +7,158 @@ $(function() {
     $("#banleft").load("../public/banleft.html");
     $("#footer").load("../company/footer.html");
 });
+
+
+
+
+function GetQueryString(names)
+{
+    var reg = new RegExp("(^|&)"+ names +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)return  unescape(r[2]); return null;
+}
+
+var user_id=GetQueryString("user_id");
+var panging=GetQueryString("panging");
+if(user_id==undefined){
+    user_id=1
+}
+if(panging==undefined){
+    panging=0
+}
+
+
+//首页个人信息部分
+$.ajax({
+    type:"post",
+    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeOne",
+    dataType:"text",
+    data:{user_id:user_id},
+    success:function(data){
+        var data = eval('(' + data + ')');//把字符串转化为数组
+        //console.log(data.userimg);
+        $(".user_camera>a").html('<img src="'+data.userimg+'" class="picter">');
+        $(".came_right>div").eq(0).text(data.username);
+        if(data.vip==0){
+            $(".came_text").text("Vo 普通会员");
+        }else{
+            $(".came_text").text(data.vip+"级会员");
+        }
+        var num=data.infolist+"%";
+        $(".progress-bar").css({width:num});
+        $(".came_num").eq(0).text(num);
+        var a=data.safe;
+        a=eval('(' + a + ')');
+        $(".came_self").html("").append("<span>账户安全：</span>");
+        if(a.phone!==undefined){
+            $(".came_self").append('<img src="../images/shouji1.png">')
+        }
+        if(a.wechat_openid!==undefined){
+            $(".came_self").append('<img src="../images/ymima1.png">')
+        }
+        if(a.email!==undefined){
+            $(".came_self").append('<img src="../images/youxiang1.png">')
+        }
+
+    },
+    error:function(data){
+        console.log("错误的"+data)
+    }
+});
+
+//----------------------------个人信息结束
+
+
+
+$.ajax({
+    type:"post",
+    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=orderCenter",
+    dataType:"text",
+    data:{
+        user_id:user_id,
+        panging:panging
+    },
+    success:function(data){
+        var data = eval('(' + data + ')');//把字符串转化为数组
+        for (var i = 0; i < data.length; i++) {
+            if(data[i].status=="未付款"){
+                //var goodsimg = eval('(' + data[i].goodsimg + ')');
+                var t=data[i].goodsimg;
+                var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-4">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span>'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">付款</a></li></ul></div>');
+            }else{
+                var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-4">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span>'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">评价</a><a href="" class="btn btn-sm btn-info">晒单</a></li></ul></div>');
+                $(".list_wai1").append(list);
+                console.log(2);
+            }
+            $(".list_wai1").append(list);
+        }
+
+    },
+    error:function(data){
+        console.log("错误的"+data)
+    }
+});
+
+
+//导航栏点击切换效果
+$("body").ready(function(){
+    //console.log(1);
+    $(".nav-tabs>li").on("click",function(){
+        $(this).addClass("active").siblings().removeClass("active");
+        //console.log($(this).text());
+        $(".list_wai1").html("");
+        if($(this).text()=="全部订单"){
+            panging=0;
+            cut(panging);
+        }
+        if($(this).text()=="待付"){
+            panging=1;
+            cut(panging);
+        }
+        if($(this).text()=="待收货"){
+            panging=2;
+            cut(panging);
+        }
+        if($(this).text()=="待评价"){
+            panging=3;
+            cut(panging);
+        }
+
+    });
+
+
+});
+
+
+
+
+function cut(panging){
+    $.ajax({
+        type:"post",
+        url:"http://dz.tx178178.com/index.php?m=api&c=User&a=orderCenter",
+        dataType:"text",
+        data:{
+            user_id:user_id,
+            panging:panging
+        },
+        success:function(data){
+            var data = eval('(' + data + ')');//把字符串转化为数组
+            for (var i = 0; i < data.length; i++) {
+                var t=data[i].goodsimg;
+                if(data[i].status=="未付款"){
+                    var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-4">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span>'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">付款</a></li></ul></div>');
+                }else{
+                    var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-4">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span>'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">评价</a><a href="" class="btn btn-sm btn-info">晒单</a></li></ul></div>');
+                    $(".list_wai1").append(list);
+                    console.log(2);
+                }
+                $(".list_wai1").append(list);
+            }
+
+
+        },
+        error:function(data){
+            console.log("错误的"+data)
+        }
+    });
+}

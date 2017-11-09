@@ -201,7 +201,7 @@ body{font-family: "微软雅黑";}
     height: 45px;
     margin-top: 5px;
 }
-.login_btn input{
+.login_btn button{
     width: 300px;
     height: 45px;
     border: none;
