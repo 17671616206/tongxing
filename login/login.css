@@ -303,3 +303,11 @@ body{font-family: "微软雅黑";}
 .footer_con>div{text-align:center; width:100%;  color:#fff;}
 .footer_C{margin-left:267px;height: 60px;}
 .footer_C>li{float:left; margin:10px;}
+
+
+.centers{
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 20px;
+    color:red;
+}

@@ -63,32 +63,40 @@ $(function(){
 
 //console.log(Request.UserHostAddress.ToString());
 
-var name,password;
+var username,password,ip;
 
 $("body").ready(function(){
-    console.log(22);
     $(".user_input").eq(0).on("blur",function(){
         console.log($(this).val());
-        name=$(this).val();
+        username=$(this).val();
     })
     $(".user_input").eq(1).on("blur",function(){
         console.log($(this).val());
         password=$(this).val();
     });
+    ip=returnCitySN["cip"]+','+returnCitySN["cname"];
     //获取到name和passsword
     $("#loginbtn").on("click",function(){
-        console.log(name+"+"+password);
+        console.log(username+"+"+password);
         $.ajax({
             type:"post",
-            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=orderCenter",
+            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=login&username=123&password=123456&ip=127.0.0.1",
             dataType:"text",
             data:{
-                name:name,
+                ip:ip,
+                username:username,
                 password:password
             },
             success:function(data){
                 var data = eval('(' + data + ')');//把字符串转化为数组
+                console.log(data);
+                if(data.state!==1){
+                    $(".centers").text("对不起,没有这个账号!");
+                }else{
+                    console.log(data.info);
+                    window.location.href ='../home/content.html'
 
+                }
 
 
 

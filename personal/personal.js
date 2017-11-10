@@ -78,7 +78,9 @@ $.ajax({
     success:function(data){
         var data = eval('(' + data + ')');//把字符串转化为数组
         //console.log(data);
-
+        var t=data.userimg;
+        console.log(t);
+        $("#imghead").attr('src',t);
         $(".col-md-push-1>span").text(data.username);
         $(".personal_img").attr('src',data.userimg);
         $(".col-sm-8").eq(2).html('<input type="text" name="area_name" class="form-control" value="'+data.username+'" /><span style="color: #999999;">*昵称填写须知：与淘宝业务或卖家品牌冲突的昵称，同兴将有可能收回</span>');
@@ -86,19 +88,21 @@ $.ajax({
 
         //------------------------------------------------------------------------------------------
         if(data.sex==0){
-            $(".col-sm-8").eq(4).html('<label class="radio-inline"><input type="checkbox" name="follow_task" value="1" />男</label><label class="radio-inline"><input type="checkbox" name="follow_task" value="0" />女</label>');
+            $(".col-sm-8").eq(5).html();
         }
         if(data.sex==1){
-            $(".col-sm-8").eq(4).html('<label class="radio-inline"><input type="checkbox" checked="checked" name="follow_task" value="1" />男</label><label class="radio-inline"><input type="checkbox" name="follow_task" value="0" />女</label>');
+            $(".man").prop( "checked", true );
         }
         if(data.sex==2){
-            $(".col-sm-8").eq(4).html('<label class="radio-inline"><input type="checkbox" name="follow_task" value="1" />男</label><label class="radio-inline"><input type="checkbox" checked="checked" name="follow_task" value="0" />女</label>');
+            $(".woman").prop( "checked", true );
         }
         $(".radio-inline").eq(0).on("click",function(){
-            $(".col-sm-8").eq(4).html('<label class="radio-inline"><input type="checkbox" checked="checked" name="follow_task" value="1" />男</label><label class="radio-inline"><input type="checkbox" name="follow_task" value="0" />女</label>');
+            $(".man").prop( "checked", true );
+            $(".woman").prop( "checked", false );
         });
         $(".radio-inline").eq(1).on("click",function(){
-            $(".col-sm-8").eq(4).html('<label class="radio-inline"><input type="checkbox" name="follow_task" value="1" />男</label><label class="radio-inline"><input type="checkbox" checked="checked" name="follow_task" value="0" />女</label>');
+            $(".man").prop( "checked", false );
+            $(".woman").prop( "checked", true );
         })
         //console.log(data.birthday);
         var birthday=data.birthday.split(",");
