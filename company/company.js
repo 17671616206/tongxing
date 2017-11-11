@@ -1,13 +1,70 @@
 /**
  * Created by Administrator on 2017/9/27 0027.
  */
+//console.log(localStorage.getItem("goodid"));
+    if(localStorage.getItem("goodid")==null){
+        var goodid="10,20,30,40,50,60";
+        localStorage.setItem("goodid",goodid);
+        console.log(1);
+    }else{
+        console.log(2);
+    }
+var a=localStorage.getItem("goodid");
+
+a=a.split(",");
+a.pop();
+a.unshift("5");
+console.log(a);
+for (var i = 0; i < a.length; i++) {
+    console.log(i);
+    var goods_id=a[i];
+    while(i==1||3||5){
+    $.ajax({
+        url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
+        type:"post",
+        dataType:"text",
+        data:{
+            goods_id:goods_id
+        },
+        success:function(data) {
+            var data = eval('(' + data + ')');
+            //处理事件
+
+
+        },
+        error:function(data){
+            console.log("错误的"+data)
+        }
+    });};
+
+    while(i==2||4||6){
+    $.ajax({
+        url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
+        type:"post",
+        dataType:"text",
+        data:{
+            goods_id:goods_id
+        },
+        success:function(data) {
+            var data = eval('(' + data + ')');
+            //处理事件
+
+
+        },
+        error:function(data){
+            console.log("错误的"+data)
+        }
+    });}
+
+
+}
 
 
 
 $(function(){
 	$(".class_ul li").click(function(){
-		$(this).addClass("class_blue").siblings().removeClass("class_blue")
-		$(".comment_list").html("")
+		$(this).addClass("class_blue").siblings().removeClass("class_blue");
+		$(".comment_list").html("");
 		switch($(this).attr('id')){
 			case 'all_e':
 				evaluate_ajax("http://api.tx178178.com/api/GoodsInfo1/evaluate");
@@ -214,8 +271,6 @@ $.ajax({
             //console.log(num);
             $(".buynum1").html(num);
         });
-
-
 
         //看了又看
         //var goodid=goods_id;

@@ -1,0 +1,143 @@
+*{margin:0px;padding:0px;}
+ul,li{list-style: none;}
+body{font-family: "微软雅黑";}
+.left{float: left;}
+.right{float: right;}
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1200px;
+}
+.register{
+    background-color: #FAFAFA;
+    padding: 0px 0px 60px;
+}
+.zheng{
+    background-color: white;
+    padding: 0px 0px 60px;
+}
+.lawer{
+    background-color: #F7FDFF;
+    padding: 0px 0px 60px;
+}
+.caishui_add{
+    display: inline-block;
+    position: absolute;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    font-size: 50px;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+}
+.caishui_add:hover{text-decoration: none;color: white;}
+.add_left{left: 10%;}
+.add_right{right:10%;}
+.fuwu_cont{
+    font-size: 24px;
+    color: #444444;
+    line-height: 34px;
+}
+.zuijin{
+    width: 100%;
+    height: 323px;
+    margin: 13px auto;
+}
+.zuijin>li{
+    float: left;
+    width: 389px;
+    height: 323px;
+    padding: 80px 25px 25px;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+.zuijin>li:nth-child(1){
+    background:url("../images/xukezheng-fuwu-img1.jpg") no-repeat center;
+}
+.zuijin>li:nth-child(2){
+    background:url("../images/xukezheng-fuwu-img2.jpg") no-repeat center;
+}
+.zuijin>li:nth-child(3){
+    background:url("../images/xukezheng-fuwu-img3.jpg") no-repeat center;
+}
+.shiwu{
+    width: 100%;
+    height: 250px;
+    margin: 100px auto 80px;
+}
+.shiwu>li{
+    width: 49%;
+    height: 250px;
+    float: left;
+    text-align: center;
+}
+.yange{
+    width: 100%;
+    height: 323px;
+    margin: 13px auto;
+}
+.yange>li{
+    width: 49%;
+    height: 323px;
+    padding: 80px 25px 25px;
+    float: left;
+    text-align: center;
+    color: white;
+    background-size: cover;
+}
+.yange>li:nth-child(1){
+    background:url("../images/824.png") no-repeat center;
+    margin-right: 23px;
+}
+.yange>li:nth-child(2){
+    background:url("../images/juxing.png") no-repeat center;
+}
+.font1{font-size: 25px;font-weight: bold;}
+.font2{font-size: 16px;margin-top: 25px;line-height: 34px;font-weight: bold;}
+.mark_title2{
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+.mark_title{
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 71px;
+}
+.mark_xian{
+    width: 50px;
+    height: 6px;
+    background-color: #C5C5C5;
+    margin: 22px auto 56px;
+}
+.mark_xian2{
+    width: 50px;
+    height: 6px;
+    background-color: #C5C5C5;
+    margin: 22px auto 0px;
+}
+.mark_dian{
+    width: 1069px;
+    height: 480px;
+    margin: 0px auto 79px;
+}
+.mark_dian>img{
+    width: 1069px;
+    height: 480px;
+}
+.mark_pro{
+    width: 100%;
+    text-align: center;
+}
+.mark_pro>img{
+    width: 100%;
+}
+.jinrong{
+    height: 830px;
+    overflow: hidden;
+}

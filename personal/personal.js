@@ -79,8 +79,7 @@ $.ajax({
         var data = eval('(' + data + ')');//把字符串转化为数组
         //console.log(data);
         var t=data.userimg;
-        console.log(t);
-        $("#imghead").attr('src',t);
+        $(".imghead").eq(0).attr('src',t);
         $(".col-md-push-1>span").text(data.username);
         $(".personal_img").attr('src',data.userimg);
         $(".col-sm-8").eq(2).html('<input type="text" name="area_name" class="form-control" value="'+data.username+'" /><span style="color: #999999;">*昵称填写须知：与淘宝业务或卖家品牌冲突的昵称，同兴将有可能收回</span>');
@@ -140,24 +139,82 @@ $.ajax({
 
 
 
-    },
-    error:function(data){
+        },
+        error:function(data){
         console.log("错误的"+data)
     }
+});
+
+$("window").ready(function(){
+    var user_id,userimg,nickname,realname,realnum,faceimg,backimg,sex,birthbay,region;
+    $(".btn").on("click",function(){
+        userimg=$(".imghead").attr('src');
+        nickname=$(".form-control").eq(0).val();
+        realname=$(".form-control").eq(1).val();
+        realnum=$(".form-control").eq(2).val();
+        //faceimg=$(".imgidfront").attr('src');
+        //console.log(faceimg);
+        //backimg=$(".imgidback").attr('src');
+        //console.log(backimg);
+        sex=$("input[name='follow_task']:checked").val();
+        birthbay=$("#year").val() + "-" + $("#month").val() + "-" + $("#day").val();
+        region=regions;
+
+        $.ajax({
+            type:"post",
+            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userPersonalInfo",
+            dataType:"text",
+            data:{
+                user_id:user_id,
+                userimg:userimg,
+                nickname:nickname,
+                realname:realname,
+                realnum:realnum,
+                //faceimg:faceimg,
+                //backimg:backimg,
+                sex:sex,
+                birthbay:birthbay,
+                region:region
+
+            },
+            success:function(data){
+                var data = eval('(' + data + ')');//把字符串转化为数组
+
+                //返回事件处理---------------------------------------------------------------------------
+
+
+            },
+            error:function(data){
+                console.log("error"+data);
+            }
+        });
+
+
+    })
 });
 
 
 
 
+
+
+
+
+
+
+
+var regions;
+
 //地址选择部分
 //--------------------------------------------------------------------------
-
+var id0,id1,id2;
 $.ajax({
     url:"http://dz.tx178178.com/index.php?m=api&c=User&a=regionChoice&id=1",
     type:"get",
     dataType:"json",
     data:{},
     success:function(data){
+        console.log(1);
         for (var n = 0; n < data.length; n++) {
             var provideoption=$('<option>'+data[n].region_name+'</option>');
             $("#provide").append(provideoption);
@@ -168,11 +225,11 @@ $.ajax({
             for (var v = 0; v < data.length; v++) {
                 if(data[v].region_name==$("#provide>option:checked").text()){
                     //console.log(data[v].region_id);
-                    var id=data[v].region_id
+                    var id0=data[v].region_id
                     //------------获取到地区ID
 
                     $.ajax({
-                        url:"http://dz.tx178178.com/index.php?m=api&c=User&a=regionChoice&id="+id+"",
+                        url:"http://dz.tx178178.com/index.php?m=api&c=User&a=regionChoice&id="+id0+"",
                         type:"get",
                         dataType:"json",
                         data:{},
@@ -188,10 +245,10 @@ $.ajax({
                                 for (var s = 0; s < data.length; s++) {
                                     if(data[s].region_name==$("#city>option:checked").text()){
                                         //console.log(data[s].region_id);
-                                        var id=data[s].region_id;
+                                        var id1=data[s].region_id;
                                         //------------获取到地区ID
                                         $.ajax({
-                                            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=regionChoice&id="+id+"",
+                                            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=regionChoice&id="+id1+"",
                                             type:"get",
                                             dataType:"json",
                                             data:{},
@@ -201,6 +258,22 @@ $.ajax({
                                                     var cunoption=$('<option>'+data[z].region_name+'</option>');
                                                     $("#cun").append(cunoption);
                                                 }
+
+                                                $("#cun").on("change",function(){
+                                                    //console.log($("#provide>option:checked").text());
+                                                    for (var s = 0; s < data.length; s++) {
+                                                        if(data[s].region_name==$("#cun>option:checked").text()){
+                                                            //console.log(data[s].region_id);
+                                                            var id2=data[s].region_id;
+                                                            //------------获取到地区ID
+                                                            //console.log(id0+","+id1+","+id2);
+
+                                                            regions=id0+","+id1+","+id2;
+                                                            console.log(regions);
+                                                        }
+
+                                                    }
+                                                })
 
 
                                             },

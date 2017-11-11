@@ -30,7 +30,7 @@ $.ajax({
     success:function(data){
         var data = eval('(' + data + ')');//把字符串转化为数组
 
-        console.log(2333);
+        //console.log(2333);
 
 
         $(".logoid").text(data.username);
@@ -85,3 +85,23 @@ $.ajax({
 });
 
 //----------------------------个人信息结束
+
+
+$("body").ready(function(){
+    //邮箱修改
+    $(".changeemail").on("click",function(){
+        console.log(123);
+        var a=$(".email").text();
+        console.log(a);
+        $(".emailbox").html('<input style="width:166px;display:inline-block" type="text" placeholder="'+a+'"/>');
+        $(".emailbox").append($('<button style="display: inline-block;width:40px;margin-left: 20px">确定</button>'));
+    });
+    //绑定手机修改
+    $(".changephone").on("click",function(){
+        var b=$(".phone").text();
+        console.log(b);
+        $(".phone").html('<input style="width:145px;display:inline-block" type="text" placeholder="'+b+'"/>');
+        $(".phone").append($('<button style="display: inline-block;width:40px;margin-left: 20px">确定</button>'));
+    })
+
+});

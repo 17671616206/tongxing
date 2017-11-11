@@ -34,3 +34,13 @@ body{font-family: "微软雅黑";}
 a{color: #478cc9;}
 a:hover{color: #478cc9;text-decoration: none;}
 .safe{color: #478cc9;}
+
+.emailbox{
+    display: inline-block;
+
+}
+.changeemail{
+    display: inline-block;
+    color: #478cc9;
+    cursor: pointer;
+}
