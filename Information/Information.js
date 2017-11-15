@@ -19,7 +19,7 @@ $.ajax({
         for(var i=0;i<data.length;i++){
             var ul=$(".Information_conH>ul");
             var listname=data[i].column_name;
-            console.log(listname);
+            //console.log(listname);
             var li=$('<li>'+listname+'</li>');
             $(ul).append(li);
         }

@@ -86,22 +86,69 @@ $.ajax({
 
 //----------------------------个人信息结束
 
-
+id=user_id;
 $("body").ready(function(){
     //邮箱修改
     $(".changeemail").on("click",function(){
         console.log(123);
         var a=$(".email").text();
         console.log(a);
-        $(".emailbox").html('<input style="width:166px;display:inline-block" type="text" placeholder="'+a+'"/>');
-        $(".emailbox").append($('<button style="display: inline-block;width:40px;margin-left: 20px">确定</button>'));
+        $(".emailbox").html('<input class="emailinput" style="width:166px;display:inline-block" type="text" placeholder="'+a+'"/>');
+        $(".emailbox").append($('<button class="emailchange" style="display: inline-block;width:40px;margin-left: 20px">确定</button>'));
+
+        $(".emailchange").on("click",function(){
+            var email=$(".emailinput").val();
+            $.ajax({
+                type:"post",
+                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=accountEdit",
+                dataType:"text",
+                data:{
+                    id:user_id,
+                    email:email
+                },
+                success:function(data){
+                    var data = eval('(' + data + ')');//把字符串转化为数组
+
+                    window.location.reload();
+                },
+                error:function(data){
+                    console.log("错误的"+data)
+                }
+            });
+        })
+
+
     });
     //绑定手机修改
     $(".changephone").on("click",function(){
         var b=$(".phone").text();
         console.log(b);
         $(".phone").html('<input style="width:145px;display:inline-block" type="text" placeholder="'+b+'"/>');
-        $(".phone").append($('<button style="display: inline-block;width:40px;margin-left: 20px">确定</button>'));
+        $(".phone").append($('<button class="phonechange" style="display: inline-block;width:40px;margin-left: 20px">确定</button>'));
+
+        $(".phonechange").on("click",function(){
+            var phone=$(".emailinput").val();
+            $.ajax({
+                type:"post",
+                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=accountEdit",
+                dataType:"text",
+                data:{
+                    id:user_id,
+                    phone:phone
+                },
+                success:function(data){
+                    var data = eval('(' + data + ')');//把字符串转化为数组
+                    window.location.reload();
+
+                },
+                error:function(data){
+                    console.log("错误的"+data)
+                }
+            });
+        })
+
+
+
     })
 
 });

@@ -63,7 +63,20 @@ $(function(){
 
 //console.log(Request.UserHostAddress.ToString());
 
-var username,password,ip;
+
+
+function GetQueryString(name)
+{
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)return  unescape(r[2]); return null;
+}
+
+var url=GetQueryString("url");
+console.log(url);
+
+var username,password/*,ip*/,href;
+href=url;
 
 $("body").ready(function(){
     $(".user_input").eq(0).on("blur",function(){
@@ -74,18 +87,19 @@ $("body").ready(function(){
         console.log($(this).val());
         password=$(this).val();
     });
-    ip=returnCitySN["cip"]+','+returnCitySN["cname"];
+    //ip=returnCitySN["cip"]+','+returnCitySN["cname"];
     //获取到name和passsword
     $("#loginbtn").on("click",function(){
-        console.log(username+"+"+password);
+        console.log(username+"+"+password+"+"+/*ip+"+"+*/href);
         $.ajax({
             type:"post",
-            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=login&username=123&password=123456&ip=127.0.0.1",
+            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=login",
             dataType:"text",
             data:{
-                ip:ip,
+                //ip:ip,
                 username:username,
-                password:password
+                password:password,
+                href:href
             },
             success:function(data){
                 var data = eval('(' + data + ')');//把字符串转化为数组
@@ -94,7 +108,13 @@ $("body").ready(function(){
                     $(".centers").text("对不起,没有这个账号!");
                 }else{
                     console.log(data.info);
-                    window.location.href ='../home/content.html'
+
+                    var salt_value=""+data.salt_value+"";
+                    var ids=$(".user_input").val();
+                    localStorage.setItem("salt_value",salt_value);
+                    localStorage.setItem("id",ids);
+
+                    window.location.href =''+href+'';
 
                 }
 

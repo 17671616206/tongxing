@@ -149,16 +149,23 @@ $("window").ready(function(){
     var user_id,userimg,nickname,realname,realnum,faceimg,backimg,sex,birthbay,region;
     $(".btn").on("click",function(){
         userimg=$(".imghead").attr('src');
+        console.log(userimg);
         nickname=$(".form-control").eq(0).val();
+        console.log(nickname);
         realname=$(".form-control").eq(1).val();
+        console.log(realname);
         realnum=$(".form-control").eq(2).val();
+        console.log(realnum);
         //faceimg=$(".imgidfront").attr('src');
         //console.log(faceimg);
         //backimg=$(".imgidback").attr('src');
         //console.log(backimg);
         sex=$("input[name='follow_task']:checked").val();
+        console.log(sex);
         birthbay=$("#year").val() + "-" + $("#month").val() + "-" + $("#day").val();
+        console.log(birthbay);
         region=regions;
+        console.log(region);
 
         $.ajax({
             type:"post",
@@ -181,7 +188,7 @@ $("window").ready(function(){
                 var data = eval('(' + data + ')');//把字符串转化为数组
 
                 //返回事件处理---------------------------------------------------------------------------
-
+                //window.location.reload();
 
             },
             error:function(data){

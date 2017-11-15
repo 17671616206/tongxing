@@ -1,63 +1,88 @@
 /**
  * Created by Administrator on 2017/9/27 0027.
  */
+//var goodid="3,3,3,3,3,3";
+//localStorage.setItem("goodid",goodid);
 //console.log(localStorage.getItem("goodid"));
     if(localStorage.getItem("goodid")==null){
-        var goodid="10,20,30,40,50,60";
+        var goodid="3,3,3,3,3,3";
         localStorage.setItem("goodid",goodid);
-        console.log(1);
-    }else{
-        console.log(2);
     }
-var a=localStorage.getItem("goodid");
+    var a=localStorage.getItem("goodid");
 
-a=a.split(",");
-a.pop();
-a.unshift("5");
-console.log(a);
-for (var i = 0; i < a.length; i++) {
-    console.log(i);
-    var goods_id=a[i];
-    while(i==1||3||5){
-    $.ajax({
-        url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
-        type:"post",
-        dataType:"text",
-        data:{
-            goods_id:goods_id
-        },
-        success:function(data) {
-            var data = eval('(' + data + ')');
-            //处理事件
+    a=a.split(",");
+//a.pop();
+//a.unshift("5");
+    console.log(a);
+    for (var i = 0; i < a.length; i++) {
 
+        if(i==0||i==2||i==4){
+            var goods_id=a[i];
+            for(var j=0;j<3;j++){
 
-        },
-        error:function(data){
-            console.log("错误的"+data)
+            $.ajax({
+                url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
+                type:"post",
+                async: false,
+                dataType:"text",
+                data:{
+                    goods_id:goods_id
+                },
+                success:function(data) {
+                    var data = eval('(' + data + ')');
+                    if(data!==undefined){
+                        //处理事件
+                        //console.log(i);
+                        console.log(goods_id);
+                        var li=$('<div class="accout_img1"><a href="" style="display: inline-block;width: 100%;height: 100%"><img src="'+data.goods_img[0]+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data.price[0].price+'</span></div><div class="accout_text1">'+data.goods_name+'</div>');
+
+                        console.log(li.html());
+                        $(".accout_moreul>li").eq(j).append(li);
+
+                    }
+
+                },
+                error:function(data){
+                    console.log("错误的"+data)
+                }
+            });
+            }
+        };
+
+        if(i==1||i==3||i==5){
+            var goods_id=a[i];
+            for(var k=0;k<3;k++){
+            $.ajax({
+                url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
+                type:"post",
+                async: false,
+                dataType:"text",
+                data:{
+                    goods_id:goods_id
+                },
+                success:function(data) {
+                    var data = eval('(' + data + ')');
+                    if(data!==undefined){
+                        //处理事件
+                        //console.log(i);
+                        //console.log(goods_id);
+                        var li=$('<div class="accout_img1"><a href="" style="display: inline-block;width: 100%;height: 100%"><img src="'+data.goods_img[0]+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data.price[0].price+'</span></div><div class="accout_text1">'+data.goods_name+'</div>');
+                        $(".accout_moreul>li").eq(k).append(li);
+
+                    }
+
+                },
+                error:function(data){
+                    console.log("错误的"+data)
+                }
+            });
+            }
         }
-    });};
-
-    while(i==2||4||6){
-    $.ajax({
-        url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
-        type:"post",
-        dataType:"text",
-        data:{
-            goods_id:goods_id
-        },
-        success:function(data) {
-            var data = eval('(' + data + ')');
-            //处理事件
 
 
-        },
-        error:function(data){
-            console.log("错误的"+data)
-        }
-    });}
+    }
 
 
-}
 
 
 
@@ -140,6 +165,10 @@ function GetQueryString(name)
 }
 
 var goods_id=GetQueryString("goods_id");
+//存看了又看
+a.pop();
+a.unshift(goods_id);
+localStorage.setItem("goodid",a);
 
 $.ajax({
     url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
@@ -352,7 +381,8 @@ $.ajax({
 });
 
 
-evaluate_ajax("http://api.tx178178.com/api/GoodsInfo1/evaluate");
+//evaluate_ajax("http://api.tx178178.com/api/GoodsInfo1/evaluate");
+evaluate_ajax("http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=evaluate");
 
 
 //服务详情
