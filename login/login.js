@@ -74,11 +74,15 @@ function GetQueryString(name)
 
 var url=GetQueryString("url");
 console.log(url);
+if(url==undefined){
+    url="../home/content.html"
+}
 
 var username,password/*,ip*/,href;
 href=url;
 
 $("body").ready(function(){
+    //登录模块
     $(".user_input").eq(0).on("blur",function(){
         console.log($(this).val());
         username=$(this).val();
@@ -109,9 +113,9 @@ $("body").ready(function(){
                 }else{
                     console.log(data.info);
 
-                    var salt_value=""+data.salt_value+"";
+                    //var salt_value=""+data.salt_value+"";
                     var ids=$(".user_input").val();
-                    localStorage.setItem("salt_value",salt_value);
+                    //localStorage.setItem("salt_value",salt_value);
                     localStorage.setItem("id",ids);
 
                     window.location.href =''+href+'';
@@ -127,4 +131,56 @@ $("body").ready(function(){
         });
 
     });
+
+
+    //注册模块
+
+    $("#tel").on("blur",function(){
+        console.log($(this).val());
+        phone=$(this).val();
+    })
+    $("#password").on("blur",function(){
+        console.log($(this).val());
+        passwd=$(this).val();
+    });
+    //ip=returnCitySN["cip"]+','+returnCitySN["cname"];
+    //获取到name和passsword
+    $("#rebtn").on("click",function(){
+        console.log(username+"+"+password+"+"+/*ip+"+"+*/href);
+        $.ajax({
+            type:"post",
+            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=register",
+            dataType:"text",
+            data:{
+                phone:phone,
+                passwd:passwd
+            },
+            success:function(data){
+                var data = eval('(' + data + ')');//把字符串转化为数组
+                console.log(data);
+                if(data.state!==1){
+                    $(".joininfo").text(data.info);
+                }else{
+                    console.log(data.info);
+                    //注册成功事件
+
+
+                    window.location.href ='login.html';
+
+                }
+
+
+
+            },
+            error:function(data){
+                console.log("错误的"+data)
+            }
+        });
+
+    });
+
+
+
+
+
 })

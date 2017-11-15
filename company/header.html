@@ -227,4 +227,47 @@
             console.log("错误的"+data);
         }
     });
+
+
+
+    var a=window.location.href;
+    console.log(a);
+    $(".logins").attr("href","../login/login.html?url="+a+"");
+
+
+
+
+    //     var salt_value=localStorage.getItem("salt_value");
+    var id=localStorage.getItem("id");
+    console.log(id);
+    //     console.log(salt_value);
+    if(id){
+//            console.log(202);
+        $.ajax({
+            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=header",
+            type:"post",
+            dataType:"text",
+            data:{
+//                    value:salt_value,
+                name:id
+            },
+            success:function(data){
+                var data = eval('(' + data + ')');
+                console.log(222);
+
+//                console.log($(".header-nava-right>li").eq(0).text());
+                $(".header-nava-right>li").eq(0).text("您好，"+data.user_name+"欢迎来到同兴一站办");
+//                if(data.info){
+//                    window.location.href ='../login/login.html';
+//                }
+            },
+            error:function(data){
+                console.log(data);
+                window.location.href ='../login/login.html';
+            }
+        })
+    }else{
+        console.log("未登录");
+    }
+
 </script>
