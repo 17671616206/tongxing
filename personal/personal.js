@@ -11,9 +11,6 @@ $(function() {
 
 
 
-
-
-
 function GetQueryString(names)
 {
     var reg = new RegExp("(^|&)"+ names +"=([^&]*)(&|$)");

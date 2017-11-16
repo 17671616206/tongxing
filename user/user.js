@@ -36,7 +36,13 @@ $(function(){
 
 
 
+//判断是否有登录，
+var id=localStorage.getItem("id");
+if(id==undefined){
+    window.location.href ='../login/login.html';
+}else{
 
+    //登陆成功后打开页面
 
 function GetQueryString(name)
 {
@@ -152,3 +158,5 @@ $.ajax({
         console.log("错误的"+data)
     }
 });
+
+}
