@@ -16,68 +16,68 @@
     console.log(a);
     for (var i = 0; i < a.length; i++) {
 
-        if(i==0||i==2||i==4){
-            var goods_id=a[i];
-            for(var j=0;j<3;j++){
-
-            $.ajax({
-                url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
-                type:"post",
-                async: false,
-                dataType:"text",
-                data:{
-                    goods_id:goods_id
-                },
-                success:function(data) {
-                    var data = eval('(' + data + ')');
-                    if(data!==undefined){
-                        //处理事件
-                        //console.log(i);
-                        console.log(goods_id);
-                        var li=$('<div class="accout_img1"><a href="" style="display: inline-block;width: 100%;height: 100%"><img src="'+data.goods_img[0]+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data.price[0].price+'</span></div><div class="accout_text1">'+data.goods_name+'</div>');
-
-                        console.log(li.html());
-                        $(".accout_moreul>li").eq(j).append(li);
-
-                    }
-
-                },
-                error:function(data){
-                    console.log("错误的"+data)
-                }
-            });
-            }
-        };
-
-        if(i==1||i==3||i==5){
-            var goods_id=a[i];
-            for(var k=0;k<3;k++){
-            $.ajax({
-                url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
-                type:"post",
-                async: false,
-                dataType:"text",
-                data:{
-                    goods_id:goods_id
-                },
-                success:function(data) {
-                    var data = eval('(' + data + ')');
-                    if(data!==undefined){
-                        //处理事件
-                        //console.log(i);
-                        //console.log(goods_id);
-                        var li=$('<div class="accout_img1"><a href="" style="display: inline-block;width: 100%;height: 100%"><img src="'+data.goods_img[0]+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data.price[0].price+'</span></div><div class="accout_text1">'+data.goods_name+'</div>');
-                        $(".accout_moreul>li").eq(k).append(li);
-
-                    }
-
-                },
-                error:function(data){
-                    console.log("错误的"+data)
-                }
-            });
-            }
-        }
+        //if(i==0||i==2||i==4){
+        //    var goods_id=a[i];
+        //    for(var j=0;j<3;j++){
+        //
+        //    $.ajax({
+        //        url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
+        //        type:"post",
+        //        async: false,
+        //        dataType:"text",
+        //        data:{
+        //            goods_id:goods_id
+        //        },
+        //        success:function(data) {
+        //            var data = eval('(' + data + ')');
+        //            if(data!==undefined){
+        //                //处理事件
+        //                //console.log(i);
+        //                console.log(goods_id);
+        //                var li=$('<div class="accout_img1"><a href="" style="display: inline-block;width: 100%;height: 100%"><img src="'+data.goods_img[0]+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data.price[0].price+'</span></div><div class="accout_text1">'+data.goods_name+'</div>');
+        //
+        //                console.log(li.html());
+        //                $(".accout_moreul>li").eq(j).append(li);
+        //
+        //            }
+        //
+        //        },
+        //        error:function(data){
+        //            console.log("错误的"+data)
+        //        }
+        //    });
+        //    }
+        //};
+        //
+        //if(i==1||i==3||i==5){
+        //    var goods_id=a[i];
+        //    for(var k=0;k<3;k++){
+        //    $.ajax({
+        //        url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
+        //        type:"post",
+        //        async: false,
+        //        dataType:"text",
+        //        data:{
+        //            goods_id:goods_id
+        //        },
+        //        success:function(data) {
+        //            var data = eval('(' + data + ')');
+        //            if(data!==undefined){
+        //                //处理事件
+        //                //console.log(i);
+        //                //console.log(goods_id);
+        //                var li=$('<div class="accout_img1"><a href="" style="display: inline-block;width: 100%;height: 100%"><img src="'+data.goods_img[0]+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data.price[0].price+'</span></div><div class="accout_text1">'+data.goods_name+'</div>');
+        //                $(".accout_moreul>li").eq(k).append(li);
+        //
+        //            }
+        //
+        //        },
+        //        error:function(data){
+        //            console.log("错误的"+data)
+        //        }
+        //    });
+        //    }
+        //}
 
 
     }
@@ -131,20 +131,22 @@ $(function(){
 
 //    看了又看轮播效果
     var index=0;
+    var accoutbo = Math.floor(($(".accoutbo").length)/2);
+    console.log(accoutbo)
     function fu(suo){
         $(".accout_moreul").animate({"top":"-"+index*299+"px"},300);
     }
     $(".prev").click(function(){
         index = index-1;
         if(index<0){
-            index=2;
+            index=accoutbo
             $(".accout_moreul").animate({"top":"0"},300);
         }
         fu(index);
     });
     $(".next").click(function(){
         index = index+1;
-        if(index>2){
+        if(index>accoutbo){
             index=0;
             $(".accout_moreul").animate({"top":"0"},300);
         }

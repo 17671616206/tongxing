@@ -474,7 +474,7 @@ body{font-family: "微软雅黑";font-size:12px;}
 
 
 .accout_more{width: 132px;height: 295px;overflow: hidden;position: relative;}
-.accout_moreul{width: 132px;height: 879px;position: absolute;top: 0px;left: 0px;}
+.accout_moreul{width: 132px;position: absolute;top: 0px;left: 0px;}
 .accout_watch div{
 	width: 60px;
 	height: 25px;
