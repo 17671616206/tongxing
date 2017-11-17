@@ -95,10 +95,15 @@ $("body").ready(function(){
     //获取到name和passsword
     $("#loginbtn").on("click",function(){
         console.log(username+"+"+password+"+"+/*ip+"+"+*/href);
+        var ids=$(".user_input").val();
+        //console.log(ids+"2333");
+        localStorage.setItem("id",ids);
+        //var id=localStorage.getItem("id");
+        //console.log(id+"33333");
         $.ajax({
-            type:"post",
+            type:"get",
             url:"http://dz.tx178178.com/index.php?m=api&c=User&a=login",
-            dataType:"text",
+            dataType:"json",
             data:{
                 //ip:ip,
                 username:username,
@@ -106,8 +111,8 @@ $("body").ready(function(){
                 href:href
             },
             success:function(data){
-                var data = eval('(' + data + ')');//把字符串转化为数组
-                console.log(data);
+                //var data = eval('(' + data + ')');//把字符串转化为数组
+                console.log(data.state);
                 if(data.state!==1){
                     $(".centers").text("对不起,没有这个账号!");
                 }else{
@@ -118,7 +123,7 @@ $("body").ready(function(){
                     //localStorage.setItem("salt_value",salt_value);
                     localStorage.setItem("id",ids);
 
-                    window.location.href =''+href+'';
+                    //window.location.href =''+href+'';
 
                 }
 
@@ -143,8 +148,59 @@ $("body").ready(function(){
         console.log($(this).val());
         passwd=$(this).val();
     });
+    $("#code").on("blur",function(){
+        console.log($(this).val());
+        code=$(this).val();
+    });
+    $("#invite").on("blur",function(){
+        console.log($(this).val());
+        invite=$(this).val();
+    });
     //ip=returnCitySN["cip"]+','+returnCitySN["cname"];
     //获取到name和passsword
+    $("#getcode").on("click",function(){
+        //$("#getcode").css({disable:true});
+        $("#getcode").attr('disabled',true);
+        $.ajax({
+            type:"post",
+            url:"http://dz.tx178178.com/index.php?m=api&c=Regist&a=messAges",
+            dataType:"text",
+            data:{
+                phone:phone
+            },
+            success:function(data){
+                var data = eval('(' + data + ')');//把字符串转化为数组
+                if(data.state==1){
+                    //alert(123);
+                    $(".joininfo").text(data.info);
+                    //$("#getcode").val(data.info);
+                    var times=60;
+                    $.extend({
+                        time:function(){
+                            $("#getcode").val(times+"秒后重发送");
+                            times=times-1;
+                            if(times==0){
+                                $("#getcode").val("获取验证码");
+                                clearInterval(settime);
+                                $("#getcode").attr('disabled',false);
+                            }
+                        }
+                    })
+                    var settime=setInterval("$.time()",1000)
+
+
+                }else{
+                    alert(data.info);
+                }
+
+            },
+            error:function(data){
+                console.log("错误的"+data)
+            }
+        });
+    })
+
+
     $("#rebtn").on("click",function(){
         console.log(username+"+"+password+"+"+/*ip+"+"+*/href);
         $.ajax({
@@ -153,7 +209,9 @@ $("body").ready(function(){
             dataType:"text",
             data:{
                 phone:phone,
-                passwd:passwd
+                passwd:passwd,
+                invite:invite,
+                code:code
             },
             success:function(data){
                 var data = eval('(' + data + ')');//把字符串转化为数组

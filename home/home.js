@@ -504,47 +504,47 @@ $(function(){
         }
     });
 //开办公司1
-    $.ajax({
-        type:"post",
-        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList7",
-        dataType:"text",
-        data:{},
-        success:function(data){
-            var data = eval('(' + data + ')');//把字符串转化为数组
-           //console.log(data.length);
-            var li1=$('.kszc').eq(0);
-            var url1=data[0].url;
-            var t1=data[0].image;
-            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
-            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
-            //li2
-            var li2=$('.container_Dconlistb').eq(0);
-            var url2=data[1].url;
-            var t2=data[1].image;
-            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href="'+url2+'"><a/>');
-            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
-            //li3--6
-            for(var i=2;i<6;i++){
-                var url=data[i].url;
-                var t=data[i].image;
-                var ul=$('.container_Dconlistcl').eq(0);
-                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
-                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
-                $(ul).append(li);
-            };
-
-            //li-end
-            var liend=$('.container_Dconlistd').eq(0);
-            var url7=data[6].url;
-            var t7=data[6].image;
-            var url8=data[7].url;
-            var t8=data[7].image;
-            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
-        },
-        error:function(data){
-            console.log("错误的"+data)
-        }
-    });
+//    $.ajax({
+//        type:"post",
+//        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList7",
+//        dataType:"text",
+//        data:{},
+//        success:function(data){
+//            var data = eval('(' + data + ')');//把字符串转化为数组
+//           //console.log(data.length);
+//            var li1=$('.kszc').eq(0);
+//            var url1=data[0].url;
+//            var t1=data[0].image;
+//            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
+//            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
+//            //li2
+//            var li2=$('.container_Dconlistb').eq(0);
+//            var url2=data[1].url;
+//            var t2=data[1].image;
+//            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href="'+url2+'"><a/>');
+//            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
+//            //li3--6
+//            for(var i=2;i<6;i++){
+//                var url=data[i].url;
+//                var t=data[i].image;
+//                var ul=$('.container_Dconlistcl').eq(0);
+//                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
+//                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
+//                $(ul).append(li);
+//            };
+//
+//            //li-end
+//            var liend=$('.container_Dconlistd').eq(0);
+//            var url7=data[6].url;
+//            var t7=data[6].image;
+//            var url8=data[7].url;
+//            var t8=data[7].image;
+//            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
+//        },
+//        error:function(data){
+//            console.log("错误的"+data)
+//        }
+//    });
 //开办公司2
     $.ajax({
         type:"post",
