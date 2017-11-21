@@ -143,9 +143,11 @@ $.ajax({
 });
 
 $("window").ready(function(){
-    var user_id,userimg,nickname,realname,realnum,faceimg,backimg,sex,birthbay,region;
+    var userimg,nickname,realname,realnum,faceimg,backimg,sex,birthbay,region;
     $(".btn").on("click",function(){
-        userimg=$(".imghead").attr('src');
+        //user_id=user_id;
+        console.log(user_id);
+        userimg=$("#imghead").attr('src');
         console.log(userimg);
         nickname=$(".form-control").eq(0).val();
         console.log(nickname);
@@ -163,13 +165,13 @@ $("window").ready(function(){
         console.log(birthbay);
         region=regions;
         console.log(region);
-
+//信息修改
         $.ajax({
             type:"post",
-            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userPersonalInfo",
+            url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userInfoEdit",
             dataType:"text",
             data:{
-                user_id:user_id,
+                user_id:1,
                 userimg:userimg,
                 nickname:nickname,
                 realname:realname,

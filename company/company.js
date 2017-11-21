@@ -122,10 +122,13 @@ function GetQueryString(name)
 
 var goods_id=GetQueryString("goods_id");
 //存看了又看
-a= a.split(",");
-a.pop();
-a.unshift(goods_id);
-localStorage.setItem("goodid",a);
+if(goods_id){
+    a= a.split(",");
+    a.pop();
+    a.unshift(goods_id);
+    localStorage.setItem("goodid",a);
+}
+
 
 $.ajax({
     url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
@@ -150,6 +153,7 @@ $.ajax({
         var picul=$(".accout_left_left_small_ul");
         $(".accout_left_left_small").append(picul);
         for(var i=0;i<data.goods_img.length;i++){
+            console.log(i);
             var t2=data.goods_img[i];
             var picli=$("<li></li>");
             $(picli).css({background:"url("+t2+") no-repeat center","background-size":"cover"});
@@ -161,7 +165,7 @@ $.ajax({
         $(".accout_left_left_small_ul").delegate("li", "click", function() {
             var back = $(this).css('backgroundImage');
             //console.log(back)
-            $(".accout_left_left_big").css({ "background": back + "no-repeat center", "background-size": "cover" })
+            $(".accout_left_left_big").css({ "background": back + "no-repeat center", "background-size": "cover",height:"260px" })
 
         })
 
@@ -284,7 +288,28 @@ $.ajax({
         //    var goodid = "good" + j;
         //    console.log(goodid);
         //};
-
+        var leftnum;
+        $(".leftt").on("click",function(){
+            leftnum=$(".accout_left_left_small_ul").css("margin-left");
+            leftnum=leftnum.split("px")[0];
+            console.log(leftnum);
+            leftnum=leftnum-115;
+            if(leftnum<-(data.goods_img.length*115-489)){
+                leftnum=-(data.goods_img.length*115-489);
+            }
+            $(".accout_left_left_small_ul").css({"margin-left":leftnum+"px"});
+        })
+        $(".rightt").on("click",function(){
+            leftnum=$(".accout_left_left_small_ul").css("margin-left");
+            leftnum=leftnum.split("px")[0];
+            console.log(leftnum);
+            leftnum=leftnum-0;
+            leftnum+=115;
+            if(leftnum>(data.goods_img.length*115-575)){
+                leftnum=(data.goods_img.length*115-575);
+            }
+            $(".accout_left_left_small_ul").css({"margin-left":leftnum+"px"});
+        })
 
 
     },
@@ -292,6 +317,17 @@ $.ajax({
         console.log("错误的"+data)
     }
 });
+
+
+    //$(".leftt").on("click",function(){
+    //    console.log(20);
+    //    var leftnum=$(".accout_left_left_small_ul").attr("margin-left");
+    //    console.log(leftnum);
+    //    //leftnum=leftnum-200;
+    //    //$(".accout_left_left_small_ul").css({margin-left:leftnum+px});
+    //})
+
+
 
         //可能需要模块
 
