@@ -1,0 +1,209 @@
+*{margin:0px;padding:0px;}
+ul,li{list-style: none;}
+body{font-family: "微软雅黑";}
+.left{float: left;}
+.right{float: right;}
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1200px;
+}
+.register{
+    background-color: white;
+}
+.zheng{
+    background-color: white;
+    padding: 0px 0px 60px;
+}
+.lawer{
+    background-color: #FAFAFA;
+}
+.caishui_add{
+    display: inline-block;
+    position: absolute;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    font-size: 50px;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+}
+.caishui_add:hover{text-decoration: none;color: white;}
+.add_left{left: 10%;}
+.add_right{right:10%;}
+.fuwu_cont{
+    font-size: 23px;
+    color: #444444;
+    line-height: 34px;
+    text-indent: 2em;
+}
+.zuijin{
+    width: 100%;
+    height: 323px;
+    margin: 13px auto;
+}
+.zuijin>li{
+    float: left;
+    width: 389px;
+    height: 323px;
+    padding: 80px 25px 25px;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+.zuijin>li:nth-child(1){
+    background:url("../images/xukezheng-fuwu-img1.jpg") no-repeat center;
+}
+.zuijin>li:nth-child(2){
+    background:url("../images/xukezheng-fuwu-img2.jpg") no-repeat center;
+}
+.zuijin>li:nth-child(3){
+    background:url("../images/xukezheng-fuwu-img3.jpg") no-repeat center;
+}
+.yange{
+    width: 100%;
+    height: 323px;
+    margin: 13px auto;
+}
+.yange>li{
+    width: 49%;
+    height: 323px;
+    padding: 80px 25px 25px;
+    float: left;
+    text-align: center;
+    color: white;
+    background-size: cover;
+}
+.yange>li:nth-child(1){
+    background:url("../images/824.png") no-repeat center;
+    margin-right: 23px;
+}
+.yange>li:nth-child(2){
+    background:url("../images/juxing.png") no-repeat center;
+}
+.font1{font-size: 25px;font-weight: bold;}
+.font2{font-size: 16px;margin-top: 25px;line-height: 34px;font-weight: bold;}
+.mark_title2{
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+.mark_title{
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 71px;
+}
+.mark_xian{
+    width: 50px;
+    height: 6px;
+    background-color: #C5C5C5;
+    margin: 22px auto 56px;
+}
+.mark_xian2{
+    width: 50px;
+    height: 6px;
+    background-color: #C5C5C5;
+    margin: 22px auto 0px;
+}
+.mark_dian{
+    width: 1069px;
+    height: 480px;
+    margin: 0px auto 79px;
+}
+.mark_dian>img{
+    width: 1069px;
+    height: 480px;
+}
+.mark_pro{
+    width: 100%;
+    text-align: center;
+}
+.mark_pro>img{
+    width: 100%;
+}
+.jiaoyu{width: 100%;}
+.jiaoyu2{height: 1400px;}
+.education{width: 100%;height: 682px;}
+.education2{width: 100%;height: 682px;margin-top: 60px;}
+/*—————————————————教育板块—————————————————————*/
+.jiaoimg{
+    width: 806px;
+    height: 491px;
+    display: inline-block;
+    float: left;
+}
+.jiaotext{
+    width: 354px;
+    height: 491px;
+    background-color: #60BCE1;
+    color: white;
+    font-size: 18px;
+    float: left;
+    line-height: 43px;
+    padding: 24px;
+    text-indent: 2em;
+}
+.jiaobox1,.jiaobox2{
+    width: 567px;
+    height: 682px;
+    float: left;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.jiao_boxin{
+    width: 100%;
+    height: 100%;
+}
+.jiaoyu_header{background-color: #FF3C3C;}
+.jiaoyu_header2{background-color: #3cafff;}
+.jiaoyu_header3{background-color: #fbb216;}
+.jiaoyu_header4{background-color: #c13cff;}
+.jiaoyu_header4,.jiaoyu_header3,.jiaoyu_header2,.jiaoyu_header{
+    width: 100%;
+    height: 80px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 36px;
+    line-height: 80px;
+}
+.jiao_back1,.jiao_back2,.jiao_back3,.jiao_back4{
+    width: 100%;
+    height: 602px;
+}
+.jiao_back1{
+    background: url("../images/jiaoyu4.png") no-repeat;
+    background-size: cover;
+}
+.jiao_back2{
+    background: url("../images/jiaoyu5.png") no-repeat;
+    background-size: cover;
+}
+.jiao_back3{
+    background: url("../images/jiaoyu6.png") no-repeat;
+    background-size: cover;
+}
+.jiao_back4{
+    background: url("../images/jiaoyu7.png") no-repeat;
+    background-size: cover;
+}
+.jiao_neirong,.jiao_neirong2,.jiao_neirong3,.jiao_neirong4{
+    height: 602px;
+    padding-left: 45px;
+    padding-right: 45px;
+    vertical-align:middle;
+    display:table-cell;
+    font-size: 30px;
+    line-height: 60px;
+}
+.jiao_neirong{background-color: rgba(255,60,60,0.5);}
+.jiao_neirong2{background-color: rgba(60,175,255,0.5);}
+.jiao_neirong3{background-color: rgba(251,178,22,0.5);}
+.jiao_neirong4{background-color: rgba(193,60,255,0.5);}
+.jiaobox2{
+    margin-left: 32px;
+}

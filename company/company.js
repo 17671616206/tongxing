@@ -294,8 +294,8 @@ $.ajax({
             leftnum=leftnum.split("px")[0];
             console.log(leftnum);
             leftnum=leftnum-115;
-            if(leftnum<-(data.goods_img.length*115-489)){
-                leftnum=-(data.goods_img.length*115-489);
+            if(leftnum<-(data.goods_img.length*115-470)){
+                leftnum=-(data.goods_img.length*115-480);
             }
             $(".accout_left_left_small_ul").css({"margin-left":leftnum+"px"});
         })
@@ -305,8 +305,8 @@ $.ajax({
             console.log(leftnum);
             leftnum=leftnum-0;
             leftnum+=115;
-            if(leftnum>(data.goods_img.length*115-575)){
-                leftnum=(data.goods_img.length*115-575);
+            if(leftnum>0){
+                leftnum=0;
             }
             $(".accout_left_left_small_ul").css({"margin-left":leftnum+"px"});
         })

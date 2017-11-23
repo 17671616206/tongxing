@@ -240,7 +240,7 @@ $.ajax({
                         dataType:"json",
                         data:{},
                         success:function(data){
-
+                            $("#city").html("");
                             for (var m = 0; m < data.length; m++) {
                                 var cityoption=$('<option>'+data[m].region_name+'</option>');
                                 $("#city").append(cityoption);
@@ -259,6 +259,7 @@ $.ajax({
                                             dataType:"json",
                                             data:{},
                                             success:function(data){
+                                                $("#cun").html("");
 
                                                 for (var z = 0; z < data.length; z++) {
                                                     var cunoption=$('<option>'+data[z].region_name+'</option>');

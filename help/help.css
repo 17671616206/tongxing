@@ -59,7 +59,8 @@ body{font-family: "微软雅黑";}
 }
 .home_banner_box{
 	padding:1px;
-	height: 387px;
+	/*height: 387px;*/
+	padding-bottom: 20px;
 }
 .home_banner_help li:nth-child(2){
 	color: #999;
