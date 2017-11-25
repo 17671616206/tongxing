@@ -44,3 +44,25 @@ a:hover{color: #478cc9;text-decoration: none;}
     color: #478cc9;
     cursor: pointer;
 }
+#sec{
+/*text-align: left;*/
+    height: 200px;
+    visibility: hidden;
+}
+#sec>div{
+margin-top: 9px;
+}
+#sec>input{
+width: 150px;
+margin-top: 5px;
+padding: 0;
+}
+#sec>span{
+margin-top: 5px;
+    color: red;
+    font-size: 18px;
+}
+#sec>input:nth-of-type(4){
+    width: 65px;
+    margin-top: 5px;
+}

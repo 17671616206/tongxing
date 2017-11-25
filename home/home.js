@@ -97,128 +97,128 @@ $(function(){
 
 
     //menu
-    var data = [
-            {"id":1,
-             "tips":"企业服务",
-             "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
-             "content":[
-                { "oid":1,
-                  "title":"注册公司",
-                  "contenta":["注册公司","注册相关","公司变更","公司注销","注销相关","其他"]
-                  },
-                { "oid":2,
-                  "title":"公司财税",
-                  "contenta":["税务咨询","代理记账","税务服务","审计报告","财务顾问","税收筹划"]
-                  },
-                { "oid":3,
-                  "title":"商标注册",
-                  "contenta":["商标咨询","基础服务","国际申请","商标案件","著作权","其他业务","版权服务"]},
-                { "oid":4,
-                  "title":"人工翻译",
-                  "contenta":["证书翻译","账单翻译","身份证翻译","证明翻译","户口本翻译","驾驶证翻译","合同协议翻译","简历翻译","新闻翻译","标书翻译","论文翻译","报告翻译"]},
-                { "oid":5,
-                  "title":"专利申请",
-                  "contenta":["专利服务"]},
-                { "oid":6,
-                  "title":"政策扶持",
-                  "contenta":["双创项目","孵化器"]},
-                 { "oid":7,
-                    "title":"场地选址",
-                    "contenta":["场地服务"]},
-                 { "oid":8,
-                    "title":"特色服务",
-                    "contenta":["开办公司","开办公司","开办公司"]}
-               ]},
-               {"id":2,
-             "tips":"金融服务",
-             "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
-             "content":[
-                { "oid":1,
-                  "title":"金融资讯",
-                  "contenta":["特色咨询"]
-                  },
-                { "oid":2,
-                  "title":"贷款服务",
-                  "contenta":["提前收款","同兴微贷","员工贷","信用贷","抵押贷"]
-                  },
-                { "oid":3,
-                  "title":"理财服务",
-                  "contenta":["同兴理财宝","短期理财","定期理财"]},
-                 { "oid":4,
-                     "title":"主题基金",
-                     "contenta":["环保基金","智能基金","股票基金","指数基金","债券基金","货币基金"]},
-                 { "oid":5,
-                  "title":"极速贷",
-                  "contenta":["快速借款"]},
-                { "oid":6,
-                  "title":"保险服务",
-                  "contenta":["全家福","人身保险","人寿保险"]},
-                { "oid":7,
-                  "title":"私募基金",
-                  "contenta":["同兴基金"]},
-                 { "oid":8,
-                     "title":"保理服务",
-                     "contenta":["企业保理"]}
-             ]},
-               {"id":3,
-             "tips":"法律服务",
-             "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
-             "content":[
-                { "oid":1,
-                  "title":"法律咨询",
-                  "contenta":["律师服务"]
-                  },
-                { "oid":2,
-                  "title":"股权事物",
-                  "contenta":["股权咨询","合伙协议","股权激励","股权代持","股权转让","增资扩股"]
-                  },
-                { "oid":3,
-                  "title":"劳动人事",
-                  "contenta":["人事制度","劳动合同","保密协议","竞业限制","培训协议","解除协议"]},
-                { "oid":4,
-                  "title":"企业经营",
-                  "contenta":["法律顾问","经营咨询","合同审拟","公司章程","合作协议"]},
-                { "oid":5,
-                  "title":"债权债务",
-                  "contenta":["欠款催收","律师函","借款合同","保证合同","还款计划","起诉书"]}
-               ]},
-               {"id":4,
-             "tips":"营销文案",
-             "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
-             "content":[
-                { "oid":1,
-                  "title":"电商推广",
-                  "contenta":["主场热门活动服务","电商大促","网店店运营","店铺视觉","霸屏营销"]
-                  },
-                { "oid":2,
-                  "title":"网络推广",
-                  "contenta":["品牌／产品推广","提升口碑","微信推广","微博推广","文案撰写","SEO"]
-                  },
-                 { "oid":3,
-                     "title":"会议会展",
-                     "contenta":["公关活动","活动执行","场景地推","商户拓展","广告投放","会议展览","创意祝福","策划"]
-                 }
-               ]},
-               {"id":5,
-             "tips":"开发服务",
-             "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
-                        {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
-             "content":[
-                { "oid":1,
-                  "title":"软件开发",
-                  "contenta":["程序开发","软件美工","插件开发","软件汉化","脚本制作"]
-                  }
-             ]}
-    ];
+    //var data = [
+    //        {"id":1,
+    //         "tips":"企业服务",
+    //         "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
+    //         "content":[
+    //            { "oid":1,
+    //              "title":"注册公司",
+    //              "contenta":["注册公司","注册相关","公司变更","公司注销","注销相关","其他"]
+    //              },
+    //            { "oid":2,
+    //              "title":"公司财税",
+    //              "contenta":["税务咨询","代理记账","税务服务","审计报告","财务顾问","税收筹划"]
+    //              },
+    //            { "oid":3,
+    //              "title":"商标注册",
+    //              "contenta":["商标咨询","基础服务","国际申请","商标案件","著作权","其他业务","版权服务"]},
+    //            { "oid":4,
+    //              "title":"人工翻译",
+    //              "contenta":["证书翻译","账单翻译","身份证翻译","证明翻译","户口本翻译","驾驶证翻译","合同协议翻译","简历翻译","新闻翻译","标书翻译","论文翻译","报告翻译"]},
+    //            { "oid":5,
+    //              "title":"专利申请",
+    //              "contenta":["专利服务"]},
+    //            { "oid":6,
+    //              "title":"政策扶持",
+    //              "contenta":["双创项目","孵化器"]},
+    //             { "oid":7,
+    //                "title":"场地选址",
+    //                "contenta":["场地服务"]},
+    //             { "oid":8,
+    //                "title":"特色服务",
+    //                "contenta":["开办公司","开办公司","开办公司"]}
+    //           ]},
+    //           {"id":2,
+    //         "tips":"金融服务",
+    //         "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
+    //         "content":[
+    //            { "oid":1,
+    //              "title":"金融资讯",
+    //              "contenta":["特色咨询"]
+    //              },
+    //            { "oid":2,
+    //              "title":"贷款服务",
+    //              "contenta":["提前收款","同兴微贷","员工贷","信用贷","抵押贷"]
+    //              },
+    //            { "oid":3,
+    //              "title":"理财服务",
+    //              "contenta":["同兴理财宝","短期理财","定期理财"]},
+    //             { "oid":4,
+    //                 "title":"主题基金",
+    //                 "contenta":["环保基金","智能基金","股票基金","指数基金","债券基金","货币基金"]},
+    //             { "oid":5,
+    //              "title":"极速贷",
+    //              "contenta":["快速借款"]},
+    //            { "oid":6,
+    //              "title":"保险服务",
+    //              "contenta":["全家福","人身保险","人寿保险"]},
+    //            { "oid":7,
+    //              "title":"私募基金",
+    //              "contenta":["同兴基金"]},
+    //             { "oid":8,
+    //                 "title":"保理服务",
+    //                 "contenta":["企业保理"]}
+    //         ]},
+    //           {"id":3,
+    //         "tips":"法律服务",
+    //         "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
+    //         "content":[
+    //            { "oid":1,
+    //              "title":"法律咨询",
+    //              "contenta":["律师服务"]
+    //              },
+    //            { "oid":2,
+    //              "title":"股权事物",
+    //              "contenta":["股权咨询","合伙协议","股权激励","股权代持","股权转让","增资扩股"]
+    //              },
+    //            { "oid":3,
+    //              "title":"劳动人事",
+    //              "contenta":["人事制度","劳动合同","保密协议","竞业限制","培训协议","解除协议"]},
+    //            { "oid":4,
+    //              "title":"企业经营",
+    //              "contenta":["法律顾问","经营咨询","合同审拟","公司章程","合作协议"]},
+    //            { "oid":5,
+    //              "title":"债权债务",
+    //              "contenta":["欠款催收","律师函","借款合同","保证合同","还款计划","起诉书"]}
+    //           ]},
+    //           {"id":4,
+    //         "tips":"营销文案",
+    //         "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
+    //         "content":[
+    //            { "oid":1,
+    //              "title":"电商推广",
+    //              "contenta":["主场热门活动服务","电商大促","网店店运营","店铺视觉","霸屏营销"]
+    //              },
+    //            { "oid":2,
+    //              "title":"网络推广",
+    //              "contenta":["品牌／产品推广","提升口碑","微信推广","微博推广","文案撰写","SEO"]
+    //              },
+    //             { "oid":3,
+    //                 "title":"会议会展",
+    //                 "contenta":["公关活动","活动执行","场景地推","商户拓展","广告投放","会议展览","创意祝福","策划"]
+    //             }
+    //           ]},
+    //           {"id":5,
+    //         "tips":"开发服务",
+    //         "right":[{"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"},
+    //                    {"title":"开办公司","keyword":"高效率 高品质 高性价比"}],
+    //         "content":[
+    //            { "oid":1,
+    //              "title":"软件开发",
+    //              "contenta":["程序开发","软件美工","插件开发","软件汉化","脚本制作"]
+    //              }
+    //         ]}
+    //];
     //banner-menu-right初始影藏
     $(".banner-menu-right").hide();
 
@@ -503,6 +503,74 @@ $(function(){
             console.log("错误的"+data);
         }
     });
+
+
+    //6个商品位置
+    $.ajax({
+        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList10",
+        type:"get",
+        dataType:"json",
+        data:{},
+        success:function(data){
+            //生成一级标题
+            for (var i = 0; i < data[0].length; i++) {
+                //console.log(data[0][i]);
+                $(".title1_name").eq(i).text(data[0][i]);
+            }
+            //二级标题部分
+            for (var j = 0; j < data[1].length; j++) {
+                //console.log(data[1][j][0].class_img);
+                //二级标题背景图部分
+                $(".ad_li_2").eq(j).css("background", "url("+data[1][j][0].class_img+") no-repeat bottom;");
+
+                for (var v = 0; v < data[1][j].length; v++) {
+                    //console.log(v);
+                    var a=$('<a href="">'+data[1][j][v].name+'</a>');
+                    $(".ad_li_2").eq(j).append(a);
+                }
+            }
+            //三级标题标题部分
+            //console.log($(".hoveryg>p").length);
+            //分6个商品模块遍历
+            var col=["#00A79D","#FFCC00","#0098DB","#EC3237","#60BCE1","#428CCB"];
+            for (var m = 0; m < data[2].length; m++) {
+                //每个模块里面6个小模块
+                for (var z = 0; z < data[2][m].length; z++) {
+                    //console.log(data[2][m][z].name);
+                    //每个小模块里面的p标签更改名称,加上转跳链接
+                    console.log((m +"|"+z)+data[2][m][z].name);
+                    $(".hoveryg>p").eq(6*m+z).html('<a style="text-decoration: none;color:'+col[m]+'" href="../register/register.html?goods_id='+data[2][m][z].class_id+'">'+data[2][m][z].name+'</a>');
+                    //生成每个小标题下面的广告位
+                    if(data[2][m][z].linnkurl){
+                    //console.log(data[2][m][z].linnkurl.length);
+                    if(data[2][m][z].linnkurl.length==1){
+                        $(".link").html('<a href="'+data[2][m][z].linnkurl[0].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[0].name+'</a>')
+                    }else{
+                        $(".link").html('<a href="'+data[2][m][z].linnkurl[0].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[0].name+'</a> &nbsp;&nbsp;| <a href="'+data[2][m][z].linnkurl[1].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[1].name+'</a>')
+                    }
+
+                }
+                }
+            }
+            //更改商品模块标题背景色
+            for (var s = 0; s < col.length; s++) {
+                $(".container_Dtop").eq(s).css("background-color",""+col[s]+"");
+            }
+
+
+
+
+
+        },
+        error:function(data){
+
+        }
+    })
+
+
+
+
+
 //开办公司1
 //    $.ajax({
 //        type:"post",
@@ -546,216 +614,216 @@ $(function(){
 //        }
 //    });
 //开办公司2
-    $.ajax({
-        type:"post",
-        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList8",
-        dataType:"text",
-        data:{},
-        success:function(data){
-            var data = eval('(' + data + ')');//把字符串转化为数组
-           //console.log(data.length);
-            var li1=$('.kszc').eq(1);
-            var url1=data[0].url;
-            var t1=data[0].image;
-            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
-            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
-            //li2
-            var li2=$('.container_Dconlistb').eq(1);
-            var url2=data[1].url;
-            var t2=data[1].image;
-            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href=""><!--<h3>股份有限公司注册</h3><p>高效办理，快速注册</p><p>￥1652</p>--><a/>');
-            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
-            //li3--6
-            for(var i=2;i<6;i++){
-                var url=data[i].url;
-                var t=data[i].image;
-                var ul=$('.container_Dconlistcl').eq(1);
-                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
-                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
-                $(ul).append(li);
-            };
-
-            //li-end
-            var liend=$('.container_Dconlistd').eq(1);
-            var url7=data[6].url;
-            var t7=data[6].image;
-            var url8=data[7].url;
-            var t8=data[7].image;
-            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
-        },
-        error:function(data){
-            console.log("错误的"+data)
-        }
-    });
-//开办公司3
-    $.ajax({
-        type:"post",
-        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList9",
-        dataType:"text",
-        data:{},
-        success:function(data){
-            var data = eval('(' + data + ')');//把字符串转化为数组
-            //console.log(data);
-            var li1=$('.kszc').eq(2);
-            var url1=data[0].url;
-            var t1=data[0].image;
-            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
-            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
-            //li2
-            var li2=$('.container_Dconlistb').eq(2);
-            var url2=data[1].url;
-            var t2=data[1].image;
-            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href="'+url2+'"><a/>');
-            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
-            //li3--6
-            for(var i=2;i<6;i++){
-                var url=data[i].url;
-                var t=data[i].image;
-                var ul=$('.container_Dconlistcl').eq(2);
-                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
-                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
-                $(ul).append(li);
-            };
-
-            //li-end
-            var liend=$('.container_Dconlistd').eq(2);
-            var url7=data[6].url;
-            var t7=data[6].image;
-            var url8=data[7].url;
-            var t8=data[7].image;
-            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
-        },
-        error:function(data){
-            console.log("错误的"+data)
-        }
-    });
-
-//开办公司4
-    $.ajax({
-        type:"post",
-        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList10",
-        dataType:"text",
-        data:{},
-        success:function(data){
-            var data = eval('(' + data + ')');//把字符串转化为数组
-           //console.log(data.length);
-            var li1=$('.kszc').eq(3);
-            var url1=data[0].url;
-            var t1=data[0].image;
-            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
-            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
-            //li2
-            var li2=$('.container_Dconlistb').eq(3);
-            var url2=data[1].url;
-            var t2=data[1].image;
-            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href=""><!--<h3>股份有限公司注册</h3><p>高效办理，快速注册</p><p>￥1652</p>--><a/>');
-            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
-            //li3--6
-            for(var i=2;i<6;i++){
-                var url=data[i].url;
-                var t=data[i].image;
-                var ul=$('.container_Dconlistcl').eq(3);
-                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
-                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
-                $(ul).append(li);
-            };
-
-            //li-end
-            var liend=$('.container_Dconlistd').eq(3);
-            var url7=data[6].url;
-            var t7=data[6].image;
-            var url8=data[7].url;
-            var t8=data[7].image;
-            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
-        },
-        error:function(data){
-            console.log("错误的"+data)
-        }
-    });
-    //开办公司5
-    $.ajax({
-        type:"post",
-        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList11",
-        dataType:"text",
-        data:{},
-        success:function(data){
-            var data = eval('(' + data + ')');//把字符串转化为数组
-            //console.log(data.length);
-            var li1=$('.kszc').eq(4);
-            var url1=data[0].url;
-            var t1=data[0].image;
-            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
-            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
-            //li2
-            var li2=$('.container_Dconlistb').eq(4);
-            var url2=data[1].url;
-            var t2=data[1].image;
-            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href=""><!--<h3>股份有限公司注册</h3><p>高效办理，快速注册</p><p>￥1652</p>--><a/>');
-            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
-            //li3--6
-            for(var i=2;i<6;i++){
-                var url=data[i].url;
-                var t=data[i].image;
-                var ul=$('.container_Dconlistcl').eq(4);
-                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
-                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
-                $(ul).append(li);
-            };
-
-            //li-end
-            var liend=$('.container_Dconlistd').eq(4);
-            var url7=data[6].url;
-            var t7=data[6].image;
-            var url8=data[7].url;
-            var t8=data[7].image;
-            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
-        },
-        error:function(data){
-            console.log("错误的"+data)
-        }
-    });
-    //开办公司6
-    $.ajax({
-        type:"post",
-        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList12",
-        dataType:"text",
-        data:{},
-        success:function(data){
-            var data = eval('(' + data + ')');//把字符串转化为数组
-            //console.log(data);
-            var li1=$('.kszc').eq(5);
-            var url1=data[0].url;
-            var t1=data[0].image;
-            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
-            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
-            //li2
-            var li2=$('.container_Dconlistb').eq(5);
-            var url2=data[1].url;
-            var t2=data[1].image;
-            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href="'+url2+'"><a/>');
-            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
-            //li3--6
-            for(var i=2;i<6;i++){
-                var url=data[i].url;
-                var t=data[i].image;
-                //console.log(data[1].image);
-                var ul=$(".container_Dconlistcl").eq(5);
-                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
-                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
-                $(ul).append(li);
-            };
-            //li-end
-            var liend=$('.container_Dconlistd').eq(5);
-            var url7=data[6].url;
-            var t7=data[6].image;
-            var url8=data[7].url;
-            var t8=data[7].image;
-            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
-        },
-        error:function(data){
-            console.log("错误的"+data)
-        }
-    });
+//    $.ajax({
+//        type:"post",
+//        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList8",
+//        dataType:"text",
+//        data:{},
+//        success:function(data){
+//            var data = eval('(' + data + ')');//把字符串转化为数组
+//           //console.log(data.length);
+//            var li1=$('.kszc').eq(1);
+//            var url1=data[0].url;
+//            var t1=data[0].image;
+//            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
+//            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
+//            //li2
+//            var li2=$('.container_Dconlistb').eq(1);
+//            var url2=data[1].url;
+//            var t2=data[1].image;
+//            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href=""><!--<h3>股份有限公司注册</h3><p>高效办理，快速注册</p><p>￥1652</p>--><a/>');
+//            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
+//            //li3--6
+//            for(var i=2;i<6;i++){
+//                var url=data[i].url;
+//                var t=data[i].image;
+//                var ul=$('.container_Dconlistcl').eq(1);
+//                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
+//                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
+//                $(ul).append(li);
+//            };
+//
+//            //li-end
+//            var liend=$('.container_Dconlistd').eq(1);
+//            var url7=data[6].url;
+//            var t7=data[6].image;
+//            var url8=data[7].url;
+//            var t8=data[7].image;
+//            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
+//        },
+//        error:function(data){
+//            console.log("错误的"+data)
+//        }
+//    });
+////开办公司3
+//    $.ajax({
+//        type:"post",
+//        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList9",
+//        dataType:"text",
+//        data:{},
+//        success:function(data){
+//            var data = eval('(' + data + ')');//把字符串转化为数组
+//            //console.log(data);
+//            var li1=$('.kszc').eq(2);
+//            var url1=data[0].url;
+//            var t1=data[0].image;
+//            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
+//            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
+//            //li2
+//            var li2=$('.container_Dconlistb').eq(2);
+//            var url2=data[1].url;
+//            var t2=data[1].image;
+//            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href="'+url2+'"><a/>');
+//            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
+//            //li3--6
+//            for(var i=2;i<6;i++){
+//                var url=data[i].url;
+//                var t=data[i].image;
+//                var ul=$('.container_Dconlistcl').eq(2);
+//                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
+//                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
+//                $(ul).append(li);
+//            };
+//
+//            //li-end
+//            var liend=$('.container_Dconlistd').eq(2);
+//            var url7=data[6].url;
+//            var t7=data[6].image;
+//            var url8=data[7].url;
+//            var t8=data[7].image;
+//            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
+//        },
+//        error:function(data){
+//            console.log("错误的"+data)
+//        }
+//    });
+//
+////开办公司4
+//    $.ajax({
+//        type:"post",
+//        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList10",
+//        dataType:"text",
+//        data:{},
+//        success:function(data){
+//            var data = eval('(' + data + ')');//把字符串转化为数组
+//           //console.log(data.length);
+//            var li1=$('.kszc').eq(3);
+//            var url1=data[0].url;
+//            var t1=data[0].image;
+//            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
+//            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
+//            //li2
+//            var li2=$('.container_Dconlistb').eq(3);
+//            var url2=data[1].url;
+//            var t2=data[1].image;
+//            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href=""><!--<h3>股份有限公司注册</h3><p>高效办理，快速注册</p><p>￥1652</p>--><a/>');
+//            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
+//            //li3--6
+//            for(var i=2;i<6;i++){
+//                var url=data[i].url;
+//                var t=data[i].image;
+//                var ul=$('.container_Dconlistcl').eq(3);
+//                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
+//                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
+//                $(ul).append(li);
+//            };
+//
+//            //li-end
+//            var liend=$('.container_Dconlistd').eq(3);
+//            var url7=data[6].url;
+//            var t7=data[6].image;
+//            var url8=data[7].url;
+//            var t8=data[7].image;
+//            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
+//        },
+//        error:function(data){
+//            console.log("错误的"+data)
+//        }
+//    });
+//    //开办公司5
+//    $.ajax({
+//        type:"post",
+//        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList11",
+//        dataType:"text",
+//        data:{},
+//        success:function(data){
+//            var data = eval('(' + data + ')');//把字符串转化为数组
+//            //console.log(data.length);
+//            var li1=$('.kszc').eq(4);
+//            var url1=data[0].url;
+//            var t1=data[0].image;
+//            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
+//            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
+//            //li2
+//            var li2=$('.container_Dconlistb').eq(4);
+//            var url2=data[1].url;
+//            var t2=data[1].image;
+//            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href=""><!--<h3>股份有限公司注册</h3><p>高效办理，快速注册</p><p>￥1652</p>--><a/>');
+//            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
+//            //li3--6
+//            for(var i=2;i<6;i++){
+//                var url=data[i].url;
+//                var t=data[i].image;
+//                var ul=$('.container_Dconlistcl').eq(4);
+//                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
+//                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
+//                $(ul).append(li);
+//            };
+//
+//            //li-end
+//            var liend=$('.container_Dconlistd').eq(4);
+//            var url7=data[6].url;
+//            var t7=data[6].image;
+//            var url8=data[7].url;
+//            var t8=data[7].image;
+//            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
+//        },
+//        error:function(data){
+//            console.log("错误的"+data)
+//        }
+//    });
+//    //开办公司6
+//    $.ajax({
+//        type:"post",
+//        url:"http://dz.tx178178.com/index.php?m=api&c=AdvertiList&a=AdvertiList12",
+//        dataType:"text",
+//        data:{},
+//        success:function(data){
+//            var data = eval('(' + data + ')');//把字符串转化为数组
+//            //console.log(data);
+//            var li1=$('.kszc').eq(5);
+//            var url1=data[0].url;
+//            var t1=data[0].image;
+//            $(li1).css({background: "url("+t1+") no-repeat center","background-size":"cover" });
+//            $(li1).html('<a style="display: inline-block;width:100%;height:100%" href="'+url1+'">');
+//            //li2
+//            var li2=$('.container_Dconlistb').eq(5);
+//            var url2=data[1].url;
+//            var t2=data[1].image;
+//            $(li2).html('<a style="display: inline-block;width:100%;height:100%" href="'+url2+'"><a/>');
+//            $(li2).css({background: "url("+t2+") no-repeat center","background-size":"cover" });
+//            //li3--6
+//            for(var i=2;i<6;i++){
+//                var url=data[i].url;
+//                var t=data[i].image;
+//                //console.log(data[1].image);
+//                var ul=$(".container_Dconlistcl").eq(5);
+//                var li=$('<li class="container_Dconlistcla hoveryg"><a style="display: inline-block;width:100%;height:100%" href="'+url+'"></li>');
+//                $(li).css({"background":"url("+t+") no-repeat center","background-size":"cover"});
+//                $(ul).append(li);
+//            };
+//            //li-end
+//            var liend=$('.container_Dconlistd').eq(5);
+//            var url7=data[6].url;
+//            var t7=data[6].image;
+//            var url8=data[7].url;
+//            var t8=data[7].image;
+//            $(liend).html('<div class="hoveryg"><a href="'+url7+'"><img src="'+t7+'"/></a></div><div class="hoveryg"><a href="'+url8+'"><img src="'+t8+'" /></a></div>');
+//        },
+//        error:function(data){
+//            console.log("错误的"+data)
+//        }
+//    });
     //资讯部分
     $.ajax({
         type:"post",
@@ -794,7 +862,7 @@ $(function(){
                 function wz(titlename){
                     //console.log(data[i].column_name);
                     for(var n=0;n<data.length;n++){
-                        console.log(data.length);
+                        //console.log(data.length);
                         //console.log(data[n]);
                     if(data[n].column_name==titlename){
 

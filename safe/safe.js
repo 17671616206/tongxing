@@ -151,4 +151,43 @@ $("body").ready(function(){
 
     })
 
+    //修改密码
+    $(".changesec").on("click",function(){
+        //console.log(203);
+        $("#sec").css("visibility","visible");
+        $(".change").on("click",function(){
+            var oldsec=$(".oldsec").val();
+            var newsec=$(".newsec").val();
+            var newsecs=$(".newsecs").val();
+            //console.log(oldsec);
+            //console.log(newsec);
+            //console.log(newsecs);
+            if(newsec!==newsecs){
+                $(".changeinfo").text("新密码不一致");
+            }else{
+            $(".changeinfo").text("");
+            $.ajax({
+                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=orderCenter&user_id=1&panging=1",
+                type:"post",
+                dataType:"json",
+                data:{
+                    oldsec:oldsec,
+                    newsec:newsec
+                },
+                success:function(data){
+
+                },
+                error:function(data){
+
+                }
+            })
+        }
+
+
+        })
+
+    })
+
+
+
 });
