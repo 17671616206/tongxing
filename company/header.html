@@ -102,20 +102,20 @@
                 <div class="searchbox">
                     <div class="left searchbox_left">找服务</div>
                     <div class="left searchbox_input">
-                        <input type="text" placeholder="请输入您需要的服务"/>
+                        <input class="searchcontant" type="text" placeholder="请输入您需要的服务"/>
                     </div>
                     <div class="right searchbox_btn">
-                        <button>搜索</button>
+                        <button class="search">搜索</button>
                     </div>
                 </div>
                 <div class="searchtext">
                     <p class="left serkey">热门搜索：</p>
-                    <ul class="left serkeylist">
-                        <li><a href="">开办公司</a></li>
-                        <li><a href="">开办公司</a></li>
-                        <li><a href="">开办公司</a></li>
-                        <li><a href="">开办公司</a></li>
-                        <li><a href="">开办公司</a></li>
+                    <ul class="left serkeylist" style="max-width: 470px;overflow: hidden">
+                        <!--<li><a href="">开办公司</a></li>-->
+                        <!--<li><a href="">开办公司</a></li>-->
+                        <!--<li><a href="">开办公司</a></li>-->
+                        <!--<li><a href="">开办公司</a></li>-->
+                        <!--<li><a href="">开办公司</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -270,4 +270,23 @@
         console.log("未登录");
     }
 
+//    热门搜索模块
+    $.ajax({
+        url:"http://dz.tx178178.com/index.php?m=api&c=Search&a=HeatSearch",
+        type:"get",
+        dataType:"json",
+        data:{
+                num:5
+        },
+        success:function(data){
+            for (var i = 0; i < data.length; i++) {
+                var searchli=$('<li><a href="../register/register.html?goods_id='+data[i].goods_id+'">'+data[i].goods_name+'</a></li>')
+                $(".serkeylist").append(searchli);
+
+            }
+        },
+        error:function(data){
+
+        }
+    })
 </script>
