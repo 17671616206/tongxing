@@ -247,7 +247,7 @@ border:1px solid #eeeeee; background-size:cover;}
 
 
 /*rightfix*/
-.rightfix{width:50px; position:fixed; right:0px; top:375px;z-index: 10;}
+.rightfix{width:50px; position:fixed; right:0px; top:90px;z-index: 10;}
 .rightfix>li{height:60px; border-radius:4px; margin-top:2px;cursor:pointer}
 .rightfix>li:nth-child(1){background:#444 url(../images/gerenzhongxin.png) no-repeat center;position: relative;transition: all 0.5s;}
 .rightfix>li:nth-child(2){background:#444 url(../images/gouwuche.png) no-repeat center;}
@@ -344,7 +344,7 @@ border:1px solid #eeeeee; background-size:cover;}
     opacity: 0;
 }
 /*backTop*/
-.backTop{width:50px; height:60px; position:fixed; bottom:20px; right:0px; background:#444; text-align:center; color:#fff; font-size:16px; font-weight:bold; border-radius:4px; cursor:pointer;} 
+.backTop{width:50px; height:60px; position:fixed; bottom:96px; right:0px; background:#444; text-align:center; color:#fff; font-size:16px; font-weight:bold; border-radius:4px; cursor:pointer;}
 .backTop>span{display:inline-block;height:50%; width:100%; background:url(../images/shang.png) no-repeat center;}
 
 

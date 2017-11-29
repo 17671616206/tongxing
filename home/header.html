@@ -102,7 +102,7 @@
                         <div class="searchbox">
                             <div class="left searchbox_left">找服务</div>
                             <div class="left searchbox_input">
-                                <input class="searchcontant" type="text" placeholder="请输入您需要的服务"/>
+                                <input id="val" class="searchval" type="text" placeholder="请输入您需要的服务"/>
                             </div>
                             <div class="right searchbox_btn">
                                 <button class="search">搜索</button>
@@ -290,25 +290,16 @@
 
 
 //     搜索功能
-var text=
-     $.ajax({
-         url:"http://dz.tx178178.com/index.php?m=api&c=Search&a=SearchText",
-         type:"get",
-         dataType:"json",
-         data:{
-             text:2
-         },
-         success:function(data){
-             for (var i = 0; i < data.length; i++) {
-                 var searchli=$('<li><a href="../register/register.html?goods_id='+data[i].goods_id+'">'+data[i].goods_name+'</a></li>')
-                 $(".serkeylist").append(searchli);
-
-             }
-         },
-         error:function(data){
-
-         }
+     var text="";
+     $("#val").on("blur",function(){
+         text=$(this).val();
+         console.log(text);
      })
+
+     $(".search").on("click",function(){
+//         alert(text);
+         window.location.href="../register/register.html?text="+text+""
+     });
 
 
  </script>

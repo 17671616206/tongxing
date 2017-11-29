@@ -524,25 +524,21 @@ $(function(){
                 $(".ad_li_2").eq(j).css("background", "url("+data[1][j][0].class_img+") no-repeat bottom;");
 
                 for (var v = 0; v < data[1][j].length; v++) {
-                    //console.log(v);
-                    var a=$('<a href="">'+data[1][j][v].name+'</a>');
+                    var a=$('<a href="../register/register.html?text='+data[1][j][v].name+'">'+data[1][j][v].name+'</a>');
                     $(".ad_li_2").eq(j).append(a);
+
                 }
             }
             //三级标题标题部分
-            //console.log($(".hoveryg>p").length);
             //分6个商品模块遍历
             var col=["#00A79D","#FFCC00","#0098DB","#EC3237","#60BCE1","#428CCB"];
             for (var m = 0; m < data[2].length; m++) {
                 //每个模块里面6个小模块
                 for (var z = 0; z < data[2][m].length; z++) {
-                    //console.log(data[2][m][z].name);
                     //每个小模块里面的p标签更改名称,加上转跳链接
-                    console.log((m +"|"+z)+data[2][m][z].name);
                     $(".hoveryg>p").eq(6*m+z).html('<a style="text-decoration: none;color:'+col[m]+'" href="../register/register.html?goods_id='+data[2][m][z].class_id+'">'+data[2][m][z].name+'</a>');
                     //生成每个小标题下面的广告位
                     if(data[2][m][z].linnkurl){
-                    //console.log(data[2][m][z].linnkurl.length);
                     if(data[2][m][z].linnkurl.length==1){
                         $(".link").html('<a href="'+data[2][m][z].linnkurl[0].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[0].name+'</a>')
                     }else{
@@ -557,6 +553,9 @@ $(function(){
                 $(".container_Dtop").eq(s).css("background-color",""+col[s]+"");
             }
 
+            //$(".ad_li_2>a").on("click",function(){
+            //    console.log($(this).text());
+            //})
 
 
 
@@ -937,8 +936,8 @@ $(function(){
         for(var i=0;i<$(".scrollA").length-1;i++){
             if(AA>=$(".scrollA").eq(i).offset().top&&AA<=$(".scrollA").eq(i+1).offset().top){
                 $(".fixedleft>ul>li").eq(i).addClass("active").siblings().removeClass('active');
-            }else if(AA>$(".scrollA").eq(4).offset().top){
-                $(".fixedleft>ul>li").eq(4).addClass("active").siblings().removeClass('active');
+            }else if(AA>$(".scrollA").eq(5).offset().top){
+                $(".fixedleft>ul>li").eq(5).addClass("active").siblings().removeClass('active');
             }
         }
 
@@ -949,7 +948,7 @@ $(function(){
         $(".fixedleft>ul>li").eq(i).on("click",function(){
             //获取对应区域高度
             var scrollATop = $(".scrollA").eq($(this).attr("indexa")).offset().top-100;
-            $("body,html").animate({scrollTop:scrollATop},1000);
+            $("body,html").animate({scrollTop:scrollATop},500);
           
         });
 

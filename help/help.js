@@ -138,12 +138,19 @@ $("body").ready(function(){
 
 
     //默认进入内容
+    var url=window.location.search;
+    url=url.split("=")[1];
+    if(url){
+        url=url;
+    }else{
+        url=1
+    }
     $.ajax({
         url:"http://dz.tx178178.com/index.php?m=api&c=Help&a=help_content",
         type:"get",
         dataType:"json",
         data:{
-            id:1
+            id:url
         },
         success:function(data){
             $(".home_section").html(data);

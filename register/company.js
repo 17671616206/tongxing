@@ -389,40 +389,4 @@ function evaluate_ajax(url){
 	});
 }
 
-//localstorage
-
-//$.ajax({
-//    url:"http://api.tx178178.com/api/GoodsInfo1/goodsInfo",
-//    type:"post",
-//    dataType:"text",
-//    data:{
-//        goods_id:1
-//    },
-//    success:function(data) {
-//        var data = eval('(' + data + ')');
-//        var length=localStorage.length+1;
-//        //for(var i=0;i<length;i++){
-//        //    console.log(i);
-//        //    console.log(localStorage.length);
-//        //    var goods="good"+[i];
-//        //    console.log(goods);
-//        //    var a=data.goods_id+"?"+data.goods_name+"?"+data.goods_img[0];
-//        //    localStorage.setItem(goods,a);
-//        //    console.log(localStorage.getItem(goods));
-//        //};
-//        //var b=localStorage.getItem(goods).split('?');
-//        //console.log(b);
-//        for(var j=localStorage.length+2;j>=0;j--){
-//            console.log(j);
-//            var goods=goods[j];
-//            var b=localStorage.getItem(goods[j]).split('?');
-//            var goodid="good"+j;
-//            console.log(goodid);
-//        }
-//    },
-//    error:function(data){
-//        console.log("错误的"+data)
-//    }
-//});
-
 
