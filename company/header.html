@@ -204,7 +204,7 @@
             fu(index);
         });
     });
-
+//轮播图效果结束
 
 
     $.ajax({
@@ -237,33 +237,33 @@
 
 
 
-    //     var salt_value=localStorage.getItem("salt_value");
-    var id=localStorage.getItem("id");
-    console.log(id);
+     var salt_value=localStorage.getItem("salt_value");
+     var id=localStorage.getItem("id");
+//    console.log(id);
     //     console.log(salt_value);
     if(id){
-//            console.log(202);
 
-    $.ajax({
+        $.ajax({
             url:"http://dz.tx178178.com/index.php?m=api&c=User&a=header",
             type:"get",
             dataType:"object",
             data:{
-                name:id
+                name:id,
+                value:salt_value
             },
             success:function(data){
                 var data = eval('(' + data + ')');
                 console.log(222);
 
 //                console.log($(".header-nava-right>li").eq(0).text());
-                $(".header-nava-right>li").eq(0).text("您好，"+data.user_name+"欢迎来到同兴一站办");
+                $(".header-nava-right>li").eq(0).text("您好，"+data.user_name+" 欢迎来到同兴一站办");
                 if(data.info){
                     window.location.href ='../login/login.html';
                 }
             },
             error:function(data){
                 console.log(data);
-//                window.location.href ='../login/login.html';
+                window.location.href ='../login/login.html';
             }
         })
     }else{

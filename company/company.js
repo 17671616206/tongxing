@@ -130,6 +130,8 @@ if(goods_id){
 }
 
 
+
+
 $.ajax({
     url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsInfo",
     type:"post",
@@ -174,6 +176,43 @@ $.ajax({
         $(".accout_left_right_name").text(data.goods_name);
         $(".accout_left_right_descrip").text(data.goods_intro);
         $(".pricename_price").text("￥"+data.price[0].price);
+
+
+
+//收藏商品
+        var id=localStorage.getItem("id");
+         //判断收藏还是取消收藏
+        console.log($(".collectimg").attr("src"));
+        if($(".collectimg").attr("src")=="../images/soucang2@2x.png"){
+            var num=1;
+        }else{
+            var num=0;
+        };
+        $(".collect").on("click",function(){
+            $.ajax({
+                url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsCollection",
+                type:"post",
+                dataType:"json",
+                data:{
+                    user:id,
+                    goods:goods_id,
+                    type:1,
+                    num:num
+                },
+                success:function(data){
+                    if(data.state=1){
+                        if(num=1){
+                            $(".collectimg").attr("src","../images/soucang1@2x.png")
+                        }else if(num=0){
+                            $(".collectimg").attr("src","../images/soucang2@2x.png")
+                        }
+                    }
+                },
+                error:function(data){
+
+                }
+            })
+        });
 
         //遍历地址信息
         //console.log(data.price[0].region_name);

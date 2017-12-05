@@ -116,14 +116,16 @@ $("body").ready(function(){
                 if(data.state!==1){
                     $(".centers").text("对不起,没有这个账号!");
                 }else{
+                    $(".centers").text("");
                     console.log(data.info);
 
-                    //var salt_value=""+data.salt_value+"";
+                    var salt_value=data.salt_value;
+                    console.log(salt_value);
                     var ids=$(".user_input").val();
-                    //localStorage.setItem("salt_value",salt_value);
+                    localStorage.setItem("salt_value",salt_value);
                     localStorage.setItem("id",ids);
 
-                    //window.location.href =''+href+'';
+                    window.location.href =''+href+'';
 
                 }
 

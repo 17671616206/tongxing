@@ -110,7 +110,7 @@
                         </div>
                         <div class="searchtext">
                             <p class="left serkey">热门搜索：</p>
-                            <ul class="left serkeylist" style="max-width: 470px;overflow: hidden">
+                            <ul class="left serkeylist" style="height:18px;width: 470px;overflow: hidden;white-space: nowrap">
                                 <!--<li><a href="">开办公司</a></li>-->
                                 <!--<li><a href="">开办公司</a></li>-->
                                 <!--<li><a href="">开办公司</a></li>-->
@@ -227,7 +227,7 @@
              console.log("错误的"+data);
          }
      });
-
+//轮播结束
 
 
      var a=window.location.href;
@@ -238,6 +238,7 @@
 
 
      var id=localStorage.getItem("id");
+     var salt_value=localStorage.getItem("salt_value");
      console.log(id);
 //     console.log(salt_value);
         if(id){
@@ -247,20 +248,22 @@
                 type:"post",
                 dataType:"text",
                 data:{
-//                    value:salt_value,
+                    value:salt_value,
                     name:id
                 },
                 success:function(data){
                     var data = eval('(' + data + ')');
                     console.log(222);
-                    $(".header-nava-right>li").eq(0).text("您好，"+data.user_name+"欢迎来到同兴一站办");
+                    $(".header-nava-right>li").eq(0).text("您好，"+data.user_name+" 欢迎来到同兴一站办");
+                    $(".logins").text("");
+                    $(".join").text("");
                     if(data.info){
                         window.location.href ='../login/login.html';
                     }
                 },
                 error:function(data){
                     console.log(data);
-//                    window.location.href ='../login/login.html';
+                    window.location.href ='../login/login.html';
                 }
             })
         }else{

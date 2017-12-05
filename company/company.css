@@ -985,3 +985,13 @@ a:hover{text-decoration: none;}
 	height: 17px;
 	overflow: hidden;
 }
+
+.collect{
+	display: inline-block;
+	height: 43px;
+	line-height: 43px;
+	width: 60px;
+	margin-left: 20px;
+	cursor: pointer;
+	box-sizing: border-box;
+}
