@@ -3,22 +3,22 @@
  */
 $(function(){
     //头部和尾部加载
-    $("#header").load("../company/header.html");
+    $("#header").load("../home/header.html");
     $("#banleft").load("../public/banleft.html");
     $("#footer").load("../company/footer.html");
-    var data = [
-        {id:'1',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'2',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'3',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'4',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'5',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'6',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'7',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'8',money:'485',text:'注销银行基本账户',num:'85421'},
-    ]
-    $("product_box").click(function(){
-        console.log(111)
-    })
+    //var data = [
+    //    {id:'1',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'2',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'3',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'4',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'5',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'6',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'7',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'8',money:'485',text:'注销银行基本账户',num:'85421'},
+    //]
+    //$("product_box").click(function(){
+    //    console.log(111)
+    //})
 
     //for(var i=0;i<data.length;i++){
     //    for(var j = 0;j<9;j++){
@@ -35,11 +35,12 @@ $(function(){
 
 
 
+var user_id=localStorage.getItem("user_id");
 
 //判断是否有登录，
 var id=localStorage.getItem("id");
 if(id==undefined){
-    window.location.href ='../login/login.html';
+    //window.location.href ='../login/login.html';
 }else{
 
     //登陆成功后打开页面
@@ -51,10 +52,8 @@ function GetQueryString(name)
     if(r!=null)return  unescape(r[2]); return null;
 }
 
-var user_id=GetQueryString("user_id");
-if(user_id==undefined){
-    user_id=1
-}
+//var user_id=GetQueryString("user_id");
+//var user_id=id;
 
 
 //首页个人信息部分
@@ -101,7 +100,6 @@ $.ajax({
         console.log("错误的"+data)
     }
 });
-
 
 
 
@@ -160,3 +158,27 @@ $.ajax({
 });
 
 }
+
+
+
+//猜你喜欢部分
+$.ajax({
+    url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=advertisement",
+    type:"post",
+    dataType:"json",
+    data:{ },
+    success:function(data) {
+        console.log(data.advertisement1.length);
+        var box=$("#product2");
+        for (var i = 0; i < data.advertisement1.length; i++) {
+            console.log(i);
+            var goods=$('<div class="product_box"><a href="../company/company.html?goods_id='+data.advertisement1[i].goods_id+'"><div class="product_img"><img src="'+data.advertisement1[i].goods_img+'" alt=""/></div><div class="product_bottom_box"><div class="product_money">¥<span class="product_red">'+data.advertisement1[i].goods_price+'</span>起</div><div class="product_cancel">'+data.advertisement1[i].goods_name+'</div></div></a></div>');
+            $(box).append(goods)
+        }
+
+
+    },
+    error:function(data){
+
+    }
+})

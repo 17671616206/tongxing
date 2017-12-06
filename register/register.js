@@ -1,6 +1,6 @@
 $(function(){
 //头部和尾部加载	
-    $("#header").load("../company/header.html");
+    $("#header").load("../home/header.html");
     $("#footer").load("../company/footer.html");
 
 //分类点击效果

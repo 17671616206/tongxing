@@ -3,7 +3,7 @@
  */
 $(function() {
     //头部和尾部加载
-    $("#header").load("../company/header.html");
+    $("#header").load("../home/header.html");
     $("#banleft").load("../public/banleft.html");
     $("#footer").load("../company/footer.html");
 });
@@ -157,6 +157,7 @@ $("body").ready(function(){
         $("#sec").css("visibility","visible");
         $(".change").on("click",function(){
             var oldsec=$(".oldsec").val();
+            var id=localStorage.getItem("id");
             var newsec=$(".newsec").val();
             var newsecs=$(".newsecs").val();
             //console.log(oldsec);
@@ -167,14 +168,17 @@ $("body").ready(function(){
             }else{
             $(".changeinfo").text("");
             $.ajax({
-                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=orderCenter&user_id=1&panging=1",
+                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=PwdEdit",
                 type:"post",
                 dataType:"json",
                 data:{
-                    oldsec:oldsec,
-                    newsec:newsec
+                    name:id,
+                    used:oldsec,
+                    pwdone:newsec,
+                    pwdtwo:newsecs
                 },
                 success:function(data){
+                    $(".changeinfo").text("修改成功！");
 
                 },
                 error:function(data){

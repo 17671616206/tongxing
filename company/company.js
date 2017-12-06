@@ -13,7 +13,7 @@
     //a=a.split(",");
 //a.pop();
 //a.unshift("5");
-    console.log(a);
+//    console.log(a);
 $.ajax({
     url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=Youlike",
     type:"post",
@@ -24,7 +24,7 @@ $.ajax({
     success:function(data) {
         //console.log(2333);
         for (var i = 0; i < data.length; i++) {
-            var containn = $('<div class="accoutbo"><div class="accout_img1"><a href="../company/company.html?'+data[i].goods_id+'" style="display: inline-block;width: 100%;height: 100%"><img src="'+data[i].goods_img+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data[i].price+'</span></div><div class="accout_text1">'+data[i].goods_name+'</div></div>');
+            var containn = $('<div class="accoutbo"><div class="accout_img1"><a href="../company/company.html?goods_id='+data[i].goods_id+'" style="display: inline-block;width: 100%;height: 100%"><img src="'+data[i].goods_img+'" alt=""/></a></div><div class="accout_money1"><span>¥</span><span>'+data[i].price+'</span></div><div class="accout_text1">'+data[i].goods_name+'</div></div>');
             $(".accout_moreul>li").append(containn);
         }
     },
@@ -60,7 +60,7 @@ $(function(){
 	
 	
     //头部和尾部加载
-    $("#header").load("header.html");
+    $("#header").load("../home/header.html");
     $("#footer").load("footer.html");
 
     $("#intro").click(function(){
@@ -155,7 +155,6 @@ $.ajax({
         var picul=$(".accout_left_left_small_ul");
         $(".accout_left_left_small").append(picul);
         for(var i=0;i<data.goods_img.length;i++){
-            console.log(i);
             var t2=data.goods_img[i];
             var picli=$("<li></li>");
             $(picli).css({background:"url("+t2+") no-repeat center","background-size":"cover"});
@@ -180,15 +179,22 @@ $.ajax({
 
 
 //收藏商品
-        var id=localStorage.getItem("id");
+        var id=localStorage.getItem("user_id");
          //判断收藏还是取消收藏
-        console.log($(".collectimg").attr("src"));
+        //console.log($(".collectimg").attr("src"));
         if($(".collectimg").attr("src")=="../images/soucang2@2x.png"){
             var num=1;
-        }else{
+        }else if($(".collectimg").attr("src")=="../images/soucang1@2x.png"){
             var num=0;
         };
         $(".collect").on("click",function(){
+
+            if($(".collectimg").attr("src")=="../images/soucang2@2x.png"){
+                var num=1;
+            }else if($(".collectimg").attr("src")=="../images/soucang1@2x.png"){
+                var num=0;
+            };
+            console.log(num);
             $.ajax({
                 url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=goodsCollection",
                 type:"post",
@@ -200,10 +206,18 @@ $.ajax({
                     num:num
                 },
                 success:function(data){
+                    console.log(10);
                     if(data.state=1){
+                        console.log(20);
+                        console.log(num);
                         if(num=1){
+                            console.log(num);
+                            console.log(30);
                             $(".collectimg").attr("src","../images/soucang1@2x.png")
-                        }else if(num=0){
+                        }
+                        if(num=0){
+                            console.log(num);
+                            console.log(40);
                             $(".collectimg").attr("src","../images/soucang2@2x.png")
                         }
                     }
@@ -245,13 +259,13 @@ $.ajax({
                 $(".accout_middle_time .accout_middle_time_box").append($('<div class="time_two">' + option[i].value + '</div>'));
 
             }
-        })
+        });
 
 
         $(".accout_middle_time_box").delegate("div","click", function () {
-            var index = $(this).index()
-           var danjia = price[addindex].spec.option[index].price
-           $(".pricename_price").html(danjia)
+            var index = $(this).index();
+           var danjia = price[addindex].spec.option[index].price;
+           $(".pricename_price").html(danjia);
 
             //添加样式
             $(this).addClass("time_one");
@@ -301,32 +315,7 @@ $.ajax({
             $(".buynum1").html(num);
         });
 
-        //看了又看
-        //var goodid=goods_id;
-        //console.log(goodid);/*15*/
-        //localStorage.goodid=goodid;
-        //var a=localStorage.getItem("goodid");
-        //console.log(a);/*15*/
-        //if(a==null){
-        //   a="1?2?3";
-        //    var d= a.split("?")
-        //}else{
-        //    console.log(a);/*15*/
-        //    a.split('?');
-        //    var b= a.push(goodid);
-        //    //var c= b.join("?");
-        //    console.log(b);
-        //    console.log(a);
-        //}
-        //var b=localStorage.getItem(goods).split('?');
-        //console.log(b);
-        //for(var j=localStorage.length+2;j>=0;j--) {
-        //    console.log(j);
-        //    var goods = goods[j];
-        //    var b = localStorage.getItem(goods[j]).split('?');
-        //    var goodid = "good" + j;
-        //    console.log(goodid);
-        //};
+
         var leftnum;
         $(".leftt").on("click",function(){
             leftnum=$(".accout_left_left_small_ul").css("margin-left");
@@ -371,18 +360,20 @@ $.ajax({
         //可能需要模块
 
 $.ajax({
-    url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=advertisement",
+    url:"http://dz.tx178178.com/index.php?m=api&c=Search&a=HeatSearch",
     type:"post",
     dataType:"text",
-    data:{ },
+    data:{
+        num:7
+    },
     success:function(data) {
         var data = eval('(' + data + ')');
 
         var ul2=$('.accout_should_ul');
-        for(var i=0;i<data.advertisement1.length;i++){
-            var tshould=data.advertisement1[i].goods_img;
-            var tid=data.advertisement1[i].goods_id;
-            var li=$('<li><a href="company.html?goods_id='+tid+'"" style="display: inline-block;width: 100%;height: 100%"><div><img style="height:100px;width:120px" src="'+tshould+'" alt=""/></div><div class="accout_should_tax">'+data.advertisement1[i].goods_name+'</div><div class="accout_should_money">'+data.advertisement1[i].goods_price+'</div></a></li>');
+        for(var i=0;i<data.length;i++){
+            var tshould=data[i].imgs;
+            var tid=data[i].goods_id;
+            var li=$('<li><a href="company.html?goods_id='+tid+'"" style="display: inline-block;width: 100%;height: 100%"><div><img style="height:100px;width:120px" src="'+tshould+'" alt=""/></div><div class="accout_should_tax">'+data[i].goods_name+'</div><div class="accout_should_money">'+data[i].price+'</div></a></li>');
             $(ul2).append(li);
         }
     },
@@ -393,17 +384,18 @@ $.ajax({
 
         //热门推荐部分
 $.ajax({
-    url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=advertisement",
+    url:"http://dz.tx178178.com/index.php?m=api&c=Search&a=HeatSearch",
     type:"post",
-    dataType:"text",
-    data:{ },
+    dataType:"json",
+    data:{
+        num:10
+    },
     success:function(data) {
-        var data = eval('(' + data + ')');
         var diva=$('.recom_content');
-        for(var i= 0;i<data.advertisement2.length;i++){
-            var t=data.advertisement2[i].goods_img;
-            var id=data.advertisement2[i].goods_id;
-            var divb=$('<div class="recom_banner"><a href="company.html?goods_id='+id+'"" style="display: inline-block;width: 100%;height: 100%"><div class="recom_banner_img"><img src="'+t+'" alt=""/></div><div class="recom_banner_apply">'+data.advertisement2[i].goods_name+'</div><div class="recom_banner_money">'+data.advertisement2[i].goods_price+'</div></a></div>');
+        for(var i= 0;i<data.length;i++){
+            var t=data[i].imgs;
+            var id=data[i].goods_id;
+            var divb=$('<div class="recom_banner"><a href="company.html?goods_id='+id+'"" style="display: inline-block;width: 100%;height: 100%"><div class="recom_banner_img"><img src="'+t+'" alt=""/></div><div class="recom_banner_apply">'+data[i].goods_name+'</div><div class="recom_banner_money">'+data[i].price+'</div></a></div>');
             $('.recom_content').append(divb);
         }
     },
