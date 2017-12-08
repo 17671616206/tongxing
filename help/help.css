@@ -339,12 +339,12 @@ body{font-family: "微软雅黑";}
 /*常见问题结束*/
 /*商家入驻开始*/
 .join{
-	padding: 15px 15px 15px 40px;
-	background-color: white;
-	border: 1px solid #DCDCDC;
+	/*padding: 15px 15px 15px 40px;*/
+	/*background-color: white;*/
+	/*border: 1px solid #DCDCDC;*/
 	width: 80%;
 	margin-left: 10px;
-	float: left;
+	/*float: left;*/
 	border-radius: 6px;
 	color: #333;
 	font-size: 12px;

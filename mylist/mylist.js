@@ -3,7 +3,7 @@
  */
 $(function() {
     //头部和尾部加载
-    $("#header").load("../company/header.html");
+    $("#header").load("../home/header.html");
     $("#banleft").load("../public/banleft.html");
     $("#footer").load("../company/footer.html");
 });
@@ -18,10 +18,10 @@ function GetQueryString(names)
     if(r!=null)return  unescape(r[2]); return null;
 }
 
-var user_id=GetQueryString("user_id");
+var user_id=localStorage.getItem("user_id");
 var panging=GetQueryString("panging");
 if(user_id==undefined){
-    user_id=1
+    //window.location.href ='../login/marketlogin.html';
 }
 if(panging==undefined){
     panging=1
@@ -32,10 +32,9 @@ if(panging==undefined){
 $.ajax({
     type:"post",
     url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeOne",
-    dataType:"text",
+    dataType:"json",
     data:{user_id:user_id},
     success:function(data){
-        var data = eval('(' + data + ')');//把字符串转化为数组
         //console.log(data.userimg);
         $(".user_camera>a").html('<img src="'+data.userimg+'" class="picter">');
         $(".came_right>div").eq(0).text(data.username);

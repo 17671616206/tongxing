@@ -3,22 +3,22 @@
  */
 $(function(){
     //头部和尾部加载
-    $("#header").load("../company/header.html");
+    $("#header").load("../home/header.html");
     $("#banleft").load("../public/banleft.html");
     $("#footer").load("../company/footer.html");
-    var data = [
-        {id:'1',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'2',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'3',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'4',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'5',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'6',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'7',money:'485',text:'注销银行基本账户',num:'85421'},
-        {id:'8',money:'485',text:'注销银行基本账户',num:'85421'},
-    ]
-    $("product_box").click(function(){
-        console.log(111)
-    })
+    //var data = [
+    //    {id:'1',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'2',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'3',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'4',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'5',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'6',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'7',money:'485',text:'注销银行基本账户',num:'85421'},
+    //    {id:'8',money:'485',text:'注销银行基本账户',num:'85421'},
+    //]
+    //$("product_box").click(function(){
+    //    console.log(111)
+    //})
 
     //for(var i=0;i<data.length;i++){
     //    for(var j = 0;j<9;j++){
@@ -35,11 +35,12 @@ $(function(){
 
 
 
+var user_id=localStorage.getItem("user_id");
 
 //判断是否有登录，
 var id=localStorage.getItem("id");
 if(id==undefined){
-    window.location.href ='../login/login.html';
+    //window.location.href ='../login/marketlogin.html';
 }else{
 
     //登陆成功后打开页面
@@ -51,10 +52,8 @@ function GetQueryString(name)
     if(r!=null)return  unescape(r[2]); return null;
 }
 
-var user_id=GetQueryString("user_id");
-if(user_id==undefined){
-    user_id=1
-}
+//var user_id=GetQueryString("user_id");
+//var user_id=id;
 
 
 //首页个人信息部分
@@ -105,7 +104,6 @@ $.ajax({
 
 
 
-
 //首页我的订单部分
 $.ajax({
     type:"post",
@@ -113,6 +111,12 @@ $.ajax({
     dataType:"text",
     data:{user_id:user_id},
     success:function(data){
+        console.log(data);
+        if(data==0){
+            var orderli=$('<li style="height: 50px;font-size:20px;line-height:50px;text-align: center;border: 1px solid #EEEEEE;border-radius: 4px;">您还没有下过订单</li>');
+            $(".order_info").append(orderli);
+        }else{
+        console.log(user_id);
         var data = eval('(' + data + ')');//把字符串转化为数组
         for (var j = 0; j < data.length; j++) {
             //console.log(j);
@@ -121,7 +125,7 @@ $.ajax({
             var orderli=$('<li class="order_info_li"><div class="info_title"><div class="left"><span>下单时间：'+time+'</span><span class="info_title2">订单编号：'+order+'</span></div><a class="right" href="javascript:void(0);">查看详情</a></div><ul class="info_tabel"><li><img class="info_tabel_img" src="../images/zhongshang.png" alt=""/><div class="info_tabel_text"><div><a href="javascript:void(0);">'+data[j].goodsname+'</a></div><div>'+data[j].goodsinfo+'</div></div></li><li>'+data[j].place+'</li><li>代付款</li><li>订单总价：<span style="color: #ff6161;">¥'+data[j].price+'</span></li><li><div href="" class="tabel_info1">立即付款</div><div href="" class="tabel_info2">取消订单</div></li></ul></li>');
             $(".order_info").append(orderli);
         }
-
+        }
     },
     error:function(data){
         console.log("错误的"+data)
@@ -130,10 +134,8 @@ $.ajax({
 
 
 
-
-
 //首页我的收藏部分
-var region=1
+var region=1;
 $.ajax({
     type:"post",
     url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeThree",
@@ -160,3 +162,27 @@ $.ajax({
 });
 
 }
+
+var user_id=localStorage.getItem("user_id");
+//猜你喜欢部分
+$.ajax({
+    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userLove",
+    type:"post",
+    dataType:"json",
+    data:{
+        id:user_id
+    },
+    success:function(data) {
+        //console.log(data.length);
+        var box=$("#product2");
+        for (var i = 0; i < data.length; i++) {
+            var goods=$('<div class="product_box"><a href="../company/company.html?goods_id='+data[i].goods_id+'"><div class="product_img"><img src="'+data[i].imgs+'" alt=""/></div><div class="product_bottom_box"><div class="product_money">¥<span class="product_red">'+data[i].price+'</span>起</div><div class="product_cancel">'+data[i].goods_name+'</div></div></a></div>');
+            $(box).append(goods)
+        }
+
+
+    },
+    error:function(data){
+
+    }
+})

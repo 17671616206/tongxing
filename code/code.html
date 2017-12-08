@@ -9,6 +9,7 @@
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="code.js"></script>
+    <script src="qrcode.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -30,8 +31,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-6 col-md-push-4">
-                                    <div class="code_img">
-                                        <img src="../images/code2.png" alt=""/>
+                                    <div class="code_img" id="qrcode">
+                                        <!--<img src="../images/code2.png" alt=""/>-->
                                     </div>
                                 </div>
                             </div>
@@ -45,4 +46,16 @@
     </div>
     <div id="footer"></div>
 </body>
+<script>
+    window.onload =function(){
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 96,//设置宽高
+            height : 96
+        });
+            var user_id=localStorage.getItem("user_id");
+            qrcode.makeCode("http://tx178178.com/login/login.html?"+user_id);
+    }
+
+
+</script>
 </html>

@@ -3,7 +3,7 @@
  */
 $(function() {
     //头部和尾部加载
-    $("#header").load("../company/header.html");
+    $("#header").load("../home/header.html");
     $("#banleft").load("../public/banleft.html");
     $("#footer").load("../company/footer.html");
 });
@@ -17,31 +17,27 @@ $(function() {
         if(r!=null)return  unescape(r[2]); return null;
     }
 
-var user_id=GetQueryString("user_id");
+var user_id=localStorage.getItem("user_id");
 if(user_id==undefined){
-    user_id=1
+    //window.location.href ='../login/marketlogin.html';
 }
 
-$.ajax({
-    type:"post",
-    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userAccount",
-    dataType:"text",
-    data:{user_id:user_id},
-    success:function(data){
-        var data = eval('(' + data + ')');//把字符串转化为数组
 
-        //console.log(2333);
+    $.ajax({
+        type:"post",
+        url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userAccount",
+        dataType:"json",
+        data:{user_id:user_id},
+        success:function(data){
+            $(".logoid").text(data.name);
+            $(".email").text(data.email);
+            $(".phone").text(data.phone);
 
-
-        $(".logoid").text(data.username);
-        $(".email").text(data.email);
-        $(".phone").text(data.phone);
-
-    },
-    error:function(data){
-        console.log("错误的"+data)
-    }
-});
+        },
+        error:function(data){
+            console.log("错误的"+data)
+        }
+    });
 
 
 
@@ -50,11 +46,9 @@ $.ajax({
 $.ajax({
     type:"post",
     url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeOne",
-    dataType:"text",
+    dataType:"json",
     data:{user_id:user_id},
     success:function(data){
-        var data = eval('(' + data + ')');//把字符串转化为数组
-        //console.log(data.userimg);
         $(".user_camera>a").html('<img src="'+data.userimg+'" class="picter">');
         $(".came_right>div").eq(0).text(data.username);
         if(data.vip==0){
@@ -157,6 +151,7 @@ $("body").ready(function(){
         $("#sec").css("visibility","visible");
         $(".change").on("click",function(){
             var oldsec=$(".oldsec").val();
+            var id=localStorage.getItem("id");
             var newsec=$(".newsec").val();
             var newsecs=$(".newsecs").val();
             //console.log(oldsec);
@@ -167,14 +162,17 @@ $("body").ready(function(){
             }else{
             $(".changeinfo").text("");
             $.ajax({
-                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=orderCenter&user_id=1&panging=1",
+                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=PwdEdit",
                 type:"post",
                 dataType:"json",
                 data:{
-                    oldsec:oldsec,
-                    newsec:newsec
+                    name:id,
+                    used:oldsec,
+                    pwdone:newsec,
+                    pwdtwo:newsecs
                 },
                 success:function(data){
+                    $(".changeinfo").text("修改成功！");
 
                 },
                 error:function(data){
