@@ -215,12 +215,12 @@ $.ajax({
                         if(num==1){
                             console.log(num);
                             console.log(30);
-                            $(".collectimg").attr("src","../images/soucang1@2x.png")
+                            $(".collectimg").attr("src","../images/soucang1@2x.png");
                         }
                         if(num==0){
                             console.log(num);
                             console.log(40);
-                            $(".collectimg").attr("src","../images/soucang2@2x.png")
+                            $(".collectimg").attr("src","../images/soucang2@2x.png");
                         }
                     }
                 },

@@ -18,7 +18,7 @@ function GetQueryString(names)
 }
 
 //var id=localStorage.getItem("id");
-//var user_id=localStorage.getItem("user_id");
+var user_id=localStorage.getItem("user_id");
 //console.log(user_id);
 
 setTimeout(function(){
@@ -176,7 +176,7 @@ setTimeout(function(){
                 url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userInfoEdit",
                 dataType:"text",
                 data:{
-                    user_id:1,
+                    user_id:user_id,
                     userimg:userimg,
                     nickname:nickname,
                     realname:realname,

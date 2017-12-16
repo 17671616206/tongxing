@@ -52,10 +52,23 @@
             width : 96,//设置宽高
             height : 96
         });
-            var user_id=localStorage.getItem("user_id");
-            qrcode.makeCode("http://tx178178.com/login/login.html?"+user_id);
+        var user_id=localStorage.getItem("user_id");
+        if(user_id){
+            $.ajax({
+                url:"http://dz.tx178178.com/index.php?m=api&c=User&a=Extension",
+                type:"get",
+                dataType:"json",
+                data:{
+                    id:user_id
+                },
+                success:function(data){
+                    qrcode.makeCode("http://tx178178.com/login/login.html?user_id="+data.code);
+                }
+            });
+        }else{
+            window.location.href='../login/login.html';
+        }
     }
-
 
 </script>
 </html>
