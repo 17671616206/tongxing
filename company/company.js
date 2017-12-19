@@ -34,8 +34,8 @@ $.ajax({
 
 });
 
-
-
+//判断是不是积分商品，积分商城传值1，普通商品undefined
+var goods_type;
 
 
 
@@ -141,7 +141,8 @@ $.ajax({
     dataType:"json",
     data:{
         goods_id:goods_id,
-        region:2
+        region:2,
+        type:1
     },
     success:function(data) {
 
@@ -180,7 +181,7 @@ $.ajax({
             //console.log(back)
             $(".accout_left_left_big").css({ "background": back + "no-repeat center", "background-size": "cover",height:"260px" })
 
-        })
+        });
 
 
         //右边价格，信息开始
@@ -221,6 +222,7 @@ $.ajax({
                                 //console.log(data.spec[i].list[j].prices);
                                 var newp=Number(data.spec[i].list[j].prices);
                                 pricee=pricee+newp;
+                                var prices=pricee;
                                 //console.log(pricee);
                                 $(".total_price").text(pricee);
                             }
@@ -232,6 +234,25 @@ $.ajax({
            }
             //价格计算完毕else
         });
+
+        //推荐组合套餐部分
+        for (var t = 0; t < data.meal.length; t++) {
+            var contain=$('<div class="contains" style="width: 295px;height: 100%;"><p class="left itemname">'+data.meal[t].meal_names+'</p><p class="right">'+data.meal[t].meal_price+'</p></div>');
+            $(".containsbox").append(contain);
+        }
+
+        //组合套餐点击效果
+        $(".contains").on("click",function(){
+            console.log($(this).children(".itemname").text());
+            for (var o = 0; o < data.meal.length; o++) {
+                if($(this).children(".itemname").text()==data.meal[o].meal_names){
+                    window.location.href='company.html?goods_id='+data.meal[o].id+'';
+                }
+            }
+        });
+
+        //提交订单部分
+
 
 
 //收藏商品
@@ -372,25 +393,25 @@ $.ajax({
         //};
 
         //购买数量
-        $(".buyadd").click(function(){
-            console.log($(".buynum").text());
-            var num=parseInt($(".buynum1").text());
-            //console.log(num);
-            num+=1;
-            //console.log(num);
-            $(".buynum1").html(num);
-        });
-        $(".remove").click(function(){
-            //console.log($(".buynum").text());
-            var num=parseInt($(".buynum1").text());
-            //console.log(num);
-            num--;
-            if(num<=1){
-                num=1;
-            }
-            //console.log(num);
-            $(".buynum1").html(num);
-        });
+        //$(".buyadd").click(function(){
+        //    console.log($(".buynum").text());
+        //    var num=parseInt($(".buynum1").text());
+        //    //console.log(num);
+        //    num+=1;
+        //    //console.log(num);
+        //    $(".buynum1").html(num);
+        //});
+        //$(".remove").click(function(){
+        //    //console.log($(".buynum").text());
+        //    var num=parseInt($(".buynum1").text());
+        //    //console.log(num);
+        //    num--;
+        //    if(num<=1){
+        //        num=1;
+        //    }
+        //    //console.log(num);
+        //    $(".buynum1").html(num);
+        //});
 
 
         var leftnum;
@@ -403,7 +424,7 @@ $.ajax({
                 leftnum=-(data.goods_img.length*115-480);
             }
             $(".accout_left_left_small_ul").css({"margin-left":leftnum+"px"});
-        })
+        });
         $(".rightt").on("click",function(){
             leftnum=$(".accout_left_left_small_ul").css("margin-left");
             leftnum=leftnum.split("px")[0];
@@ -506,6 +527,12 @@ evaluate_ajax("http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=evaluate");
 //    }
 //});
 
+
+if(goods_type==undefined){
+    //1积分商品
+    goods_type=1
+}
+
 //评论模块
 function evaluate_ajax(url){
 	$.ajax({
@@ -513,7 +540,8 @@ function evaluate_ajax(url){
 	    type:"post",
 	    dataType:"text",
 	    data:{
-	        goods_id:goods_id
+            goods_id:goods_id,
+            type:type
 	    },
 	    success:function(data) {
 	        var data = eval('(' + data + ')');

@@ -175,7 +175,7 @@ $.ajax({
         for(var i=0;i<data.advertisement1.length;i++){
             var tshould=data.advertisement1[i].goods_img;
             var tid=data.advertisement1[i].goods_id;
-            var li=$('<li><a href="company.html?goods_id='+tid+'"" style="display: inline-block;width: 100%;height: 100%"><div><img style="height:100px;width:120px" src="'+tshould+'" alt=""/></div><div class="accout_should_tax">'+data.advertisement1[i].goods_name+'</div><div class="accout_should_money">'+data.advertisement1[i].goods_price+'</div></a></li>')
+            var li=$('<li><a href="company.html?goods_id='+tid+'"" style="display: inline-block;width: 100%;height: 100%"><div><img style="height:100px;width:120px" src="'+tshould+'" alt=""/></div><div class="accout_should_tax">'+data.advertisement1[i].goods_name+'</div><div class="accout_should_money">'+data.advertisement1[i].goods_price+'</div></a></li>');
             $(ul2).append(li);
         }
     },

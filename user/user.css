@@ -100,7 +100,7 @@ a:hover{color: #478cc9;text-decoration: none;}
 .info_tabel>li:nth-child(4){width: 178px;border-right: 1px solid #EEEEEE;line-height: 40px;}
 .info_tabel>li:nth-child(5){width: 185px;line-height: 40px;position: relative;padding: 10px 15px 0px;}
 .info_tabel_img{width: 40px;height: 40px;border-radius: 4px;float: left;}
-.info_tabel_text{float: left;margin-left: 6px;color: #999999;}
+.info_tabel_text{/*float: left;*/margin-left: 6px;color: #999999;}
 .tabel_info1{border: 1px solid #478cc9;background-color: #478cc9;color: white;}
 .tabel_info2{border: 1px solid #EEEEEE;background-color: #F1F1F1;color: #999999;margin-left: 10px;}
 .info_tabel>li:nth-child(5)>div{

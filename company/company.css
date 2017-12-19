@@ -109,11 +109,18 @@ body{font-family: "微软雅黑";font-size:12px;}
 .accout_left_right_contains{
 	width: 80%;
 	min-height: 23px;
-	background-color: #eeeeee;
+	/*background-color: #eeeeee;*/
 	margin: 5px 0 0 20px;
 }
 .contains{
 	margin-left: 90px;
+	display: inline-block;
+	height:22px;
+	background-color: #eee;
+	cursor: pointer;
+}
+.containsbox{
+
 }
 .pricename{
 	margin:5px 0 0 10px;
@@ -122,7 +129,7 @@ body{font-family: "微软雅黑";font-size:12px;}
 .itemname{
 	display: inline-block;
 	white-space:nowrap;
-	max-width: 205px;
+	width: 205px;
 	overflow: hidden;
 }
 .pricename_price{
@@ -172,6 +179,7 @@ body{font-family: "微软雅黑";font-size:12px;}
 	padding:0 4px;
 	border:1px solid #999999;
 	margin-left: 5px;
+	cursor: pointer;
 }
 .placeholder>.activee{
 	float: left;

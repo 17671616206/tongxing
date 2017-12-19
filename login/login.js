@@ -154,6 +154,12 @@ $("body").ready(function(){
         console.log($(this).val());
         code=$(this).val();
     });
+    var invitee=GetQueryString("user_id");
+    if(invitee){
+        invite=invitee;
+        $("#invite").val(invitee);
+    }
+
     $("#invite").on("blur",function(){
         console.log($(this).val());
         invite=$(this).val();

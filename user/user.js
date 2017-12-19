@@ -111,7 +111,7 @@ $.ajax({
     dataType:"text",
     data:{user_id:user_id},
     success:function(data){
-        console.log(data);
+        //console.log(data);
         if(data==0){
             var orderli=$('<li style="height: 50px;font-size:20px;line-height:50px;text-align: center;border: 1px solid #EEEEEE;border-radius: 4px;">您还没有下过订单</li>');
             $(".order_info").append(orderli);
@@ -185,4 +185,4 @@ $.ajax({
     error:function(data){
 
     }
-})
+});
