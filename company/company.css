@@ -106,9 +106,24 @@ body{font-family: "微软雅黑";font-size:12px;}
 	background-color: #eeeeee;
 	margin: 5px 0 0 20px;
 }
+.accout_left_right_contains{
+	width: 80%;
+	min-height: 23px;
+	background-color: #eeeeee;
+	margin: 5px 0 0 20px;
+}
+.contains{
+	margin-left: 90px;
+}
 .pricename{
 	margin:5px 0 0 10px;
 	font-size: 16px;
+}
+.itemname{
+	display: inline-block;
+	white-space:nowrap;
+	max-width: 205px;
+	overflow: hidden;
 }
 .pricename_price{
 	margin:5px 0 0 0;
@@ -141,14 +156,30 @@ body{font-family: "微软雅黑";font-size:12px;}
 	margin:5px 0 0 5px;
 }
 .placeholder{
-	width: 170px;
+	display: inline-block;
+	/*width: 170px;*/
 	/*height: 80px;*/
-	background-color: white;
-	margin:-28px 0 0 320px;
-	border:1px solid #dedede;
+	/*background-color: white;*/
+	/*margin:-28px 0 0 320px;*/
+	/*border:1px solid #dedede;*/
+	/*float: left;*/
+	/*z-index: 99999;*/
+	/*display: none;*/
+}
+.placeholder>li{
 	float: left;
-	z-index: 99999;
-	display: none;
+	line-height: 20px;
+	padding:0 4px;
+	border:1px solid #999999;
+	margin-left: 5px;
+}
+.placeholder>.activee{
+	float: left;
+	line-height: 20px;
+	padding:0 4px;
+	border:1px solid #F23713;
+	margin-left: 5px;
+	color:#F23713
 }
 .dress{
 	/*width: 50px;*/
@@ -899,7 +930,7 @@ a:hover{text-decoration: none;}
 }
 .class_ul{
 	float: left;
-	width: 330px;
+	width: 400px;
 	height: 40px;
 }
 .class_ul li{float: left;margin-right: 20px;}

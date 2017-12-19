@@ -87,10 +87,10 @@ $("body").ready(function(){
                 var li=$('<li>'+data[2][k].title+'</li>');
                 $(".home_banner_we").eq(2).append(li);
             };
-            for (var n = 0; n < data[3].length; n++) {
-                var li=$('<li>'+data[3][n].title+'</li>');
-                $(".home_banner_we").eq(3).append(li);
-            };
+            //for (var n = 0; n < data[3].length; n++) {
+            //    var li=$('<li>'+data[3][n].title+'</li>');
+            //    $(".home_banner_we").eq(3).append(li);
+            //};
 
 
             var artiid;

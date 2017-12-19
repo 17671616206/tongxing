@@ -75,7 +75,7 @@ function GetQueryString(name)
 var url=GetQueryString("url");
 console.log(url);
 if(url==undefined){
-    url="../home/content.html"
+    url="../home/content.html";
 }
 
 var username,password/*,ip*/,href;
@@ -86,7 +86,7 @@ $("body").ready(function(){
     $(".user_input").eq(0).on("blur",function(){
         console.log($(this).val());
         username=$(this).val();
-    })
+    });
     $(".user_input").eq(1).on("blur",function(){
         console.log($(this).val());
         password=$(this).val();

@@ -188,9 +188,9 @@
                 img.height = rect.height;
 //         img.style.marginLeft = rect.left+'px';
                 img.style.marginTop = rect.top+'px';
-            }
+            };
             var reader = new FileReader();
-            reader.onload = function(evt){img.src = evt.target.result;}
+            reader.onload = function(evt){img.src = evt.target.result;};
             reader.readAsDataURL(file.files[0]);
         }
         else //兼容IE

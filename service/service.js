@@ -196,7 +196,7 @@ $("body").ready(function(){
         var zip_code=$(".zip_code").val();
         var names=$(".name").val();
         var phones=$(".phone").val();
-        var fixed_num=$(".tel0").val()+"-"+$(".tel1").val()+"-"+$(".tel2").val();
+        //var fixed_num=$(".tel0").val()+"-"+$(".tel1").val()+"-"+$(".tel2").val();
         if($(".checked").checked){
             //console.log(2.3);
             var state=1;
@@ -221,7 +221,7 @@ $("body").ready(function(){
                 zip_code:zip_code,
                 names:names,
                 phones:phones,
-                fixed_num:fixed_num,
+                //fixed_num:fixed_num,
                 state:state
             },
             success:function(data){

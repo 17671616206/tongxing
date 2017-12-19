@@ -512,6 +512,7 @@ $(function(){
         dataType:"json",
         data:{},
         success:function(data){
+        	console.log(data)
             //生成一级标题
             for (var i = 0; i < data[0].length; i++) {
                 //console.log(data[0][i]);
@@ -524,7 +525,7 @@ $(function(){
                 $(".ad_li_2").eq(j).css("background", "url("+data[1][j][0].class_img+") no-repeat bottom;");
 
                 for (var v = 0; v < data[1][j].length; v++) {
-                    var a=$('<a href="../register/register.html?text='+data[1][j][v].name+'">'+data[1][j][v].name+'</a>');
+                    var a=$('<a href="../register/register.html?two_id='+data[1][j][v].class_id+'">'+data[1][j][v].name+'</a>');
                     $(".ad_li_2").eq(j).append(a);
 
                 }
