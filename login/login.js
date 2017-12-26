@@ -61,7 +61,6 @@ $(function(){
 });
 
 
-//console.log(Request.UserHostAddress.ToString());
 
 
 
@@ -141,11 +140,22 @@ $("body").ready(function(){
 
 
     //注册模块
+    setInterval(function(){
+        console.log($("#tel").val().length);
+        if($("#tel").val().length==11){
+            $("#getcode").attr('disabled',false);
+            $("#getcode").css({"background-color":"#0396FF"/*,"color:":"white"*/});
+            $("#getcode").css({"color":"#FFF"});
+        }else{
+            $("#getcode").attr('disabled',true);
+        }
+    },600);
 
     $("#tel").on("blur",function(){
         console.log($(this).val());
+        //console.log($(this).val().length);
         phone=$(this).val();
-    })
+    });
     $("#password").on("blur",function(){
         console.log($(this).val());
         passwd=$(this).val();
@@ -163,6 +173,13 @@ $("body").ready(function(){
     $("#invite").on("blur",function(){
         console.log($(this).val());
         invite=$(this).val();
+    });
+
+    //判断是否填完
+    $("#password").on("blur",function(){
+        if($("#code").val()!==undefined&$("#tel").val()!==undefined&$("#password").val()!==undefined){
+            $("#rebtn").css({"background-color":"#0396FF"})
+        }
     });
     //ip=returnCitySN["cip"]+','+returnCitySN["cname"];
     //获取到name和passsword
@@ -185,6 +202,7 @@ $("body").ready(function(){
                     var times=60;
                     $.extend({
                         time:function(){
+                            $("#getcode").attr('disabled',true);
                             $("#getcode").val(times+"秒后重发送");
                             times=times-1;
                             if(times==0){
@@ -246,7 +264,18 @@ $("body").ready(function(){
     });
 
 
+    //快捷登陆模块///////////////////////////////////////////////////////////////////////////////////
+$(".login_three>ul>li").eq(0).on("click",function(){
+    window.location.href='https://www.baidu.com/';
+});
+$(".login_three>ul>li").eq(1).on("click",function(){
+    window.location.href='https://www.sina.com/';
+});
+$(".login_three>ul>li").eq(2).on("click",function(){
+    window.location.href='https://www.taobao.com/';
+});
 
 
 
-})
+
+});

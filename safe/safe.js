@@ -125,13 +125,13 @@ $("body").ready(function(){
             $.ajax({
                 type:"post",
                 url:"http://dz.tx178178.com/index.php?m=api&c=User&a=accountEdit",
-                dataType:"text",
+                dataType:"json",
                 data:{
                     id:user_id,
                     phone:phone
                 },
                 success:function(data){
-                    var data = eval('(' + data + ')');//把字符串转化为数组
+                    //var data = eval('(' + data + ')');//把字符串转化为数组
                     window.location.reload();
 
                 },
@@ -143,7 +143,7 @@ $("body").ready(function(){
 
 
 
-    })
+    });
 
     //修改密码
     $(".changesec").on("click",function(){

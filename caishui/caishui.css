@@ -8,6 +8,7 @@ body{font-family: "微软雅黑";}
     padding-right: 0px;
     width: 1200px;
 }
+.banner-bottomc>li:nth-child(3)>a{color: #478cc9;}
 .carousel-indicators>.active{margin-right: 10px;}
 .carousel-indicators>li{margin-right: 10px;}
 .carousel{padding: 0PX;}
@@ -19,7 +20,7 @@ body{font-family: "微软雅黑";}
     background-color: white;
     padding: 0px 0px 60px;
 }
-.carousel{height: 500px;margin-top: -10px;}
+.carousel{height: 500px;}
 .item,.carousel-inner{height: 500px;}
 .caishui_add{
     display: inline-block;

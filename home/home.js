@@ -114,7 +114,8 @@ $(function(){
                 var oDiv = $('<div></div>');
                 var oul = $('<ul class="clearfix"></ul>');
                 for(var j=0;j<data[i].contenta.length;j++){
-                    var aLi = $('<li>'+data[i].contenta[j].title+'</li>');
+                    //var aLi = $('<li>'+data[i].contenta[j].title+'</li>');
+                    var aLi = $('<li><a style="text-decoration: none;" href="../register/register.html?two_id='+data[i].contenta[j].oid+'">'+data[i].contenta[j].title+'</a></li>');
                     $(oul).append(aLi);
                 };
                 $(oDiv).append($(oul));
@@ -142,7 +143,11 @@ $(function(){
             for(var h=0;h<$(".banner-left-content>div").length;h++){
                 $(".banner-left-content>div").eq(h).attr("indexa",h);
             }
+            $(".banner-left-content>div").on("mouseout",function(){
+                $(this).children('ul').find("a").css("color","white");
+            });
             $(".banner-left-content>div").on("mouseover",function(){
+                $(this).children('ul').find("a").css("color","#478CC9");
                 $(".banner-left-content>div").removeClass('banner-left-contenta');
                 $(this).addClass("banner-left-contenta").siblings();
                 //$(".banner-menu-right")显示
@@ -240,7 +245,7 @@ $(function(){
                 var t=data[i].image;
                 var url=data[i].url;
                 //console.log(t);
-                var li= $('<li class="hotarea_listimg"><a href="'+url+'"><img style="height: 146px;width:300px" src="'+t+'"/></a></li>');
+                var li= $('<li class="hotarea_listimg"><a href="'+url+'"><img style="height: 146px;width:298px" src="'+t+'"/></a></li>');
                 $(ullist).append(li);
             }
         },
@@ -263,7 +268,7 @@ $(function(){
                     var infoleft=info;
                     var inforight=info;
                     var ul1= $('.conlistblo');
-                    var li=$('<li><div class="conlist_header"><p class="left">开办公司<span>STAR A COMPANY</span></p>  <a class="right" href="'+url+'">更多<span></span></a></div><a style="display: inline-block;width:100%;height:100%" href="'+t+'"><div class="conlist_con" style="background-image:url('+t+');"></div></a></li>');
+                    var li=$('<li><div class="conlist_header"><p class="left">开办公司</p>  <a class="right" href="'+url+'">更多<span></span></a></div><a style="display: inline-block;width:100%;height:100%" href="'+t+'"><div class="conlist_con" style="background-image:url('+t+');"></div></a></li>');
                     $(ul1).append(li);
                 };
                 for(var k=data[1].length-1;k>=0;k--){
@@ -273,7 +278,7 @@ $(function(){
                     //var infoleft=info[0];
                     //var inforight=info[1];
                     var ul2= $('.conlistblo2');
-                    var li=$('<li><div class="conlist_header"><p class="left">开办公司<span>STAR A COMPANY</span></p>  <a class="right" href="'+url+'">更多<span></span></a></div><div class="conlist_con" style="background-image:url('+t+');"><a style="display: inline-block;width:100%;height:100%" href="'+t+'"><div class="conlist_con" style="background-image:url('+t+');"></div></a></li>');
+                    var li=$('<li><div class="conlist_header"><p class="left">开办公司</p>  <a class="right" href="'+url+'">更多<span></span></a></div><div class="conlist_con" style="background-image:url('+t+');"><a style="display: inline-block;width:100%;height:100%" href="'+t+'"><div class="conlist_con" style="background-image:url('+t+');"></div></a></li>');
                     $(ul2).append(li);
                 }
 
@@ -300,20 +305,20 @@ $(function(){
             var Bleft=$('.container_Bleft');
             Bleft.html('<a href="'+url+'" style="display:inline-block;width: 100%;height: 100%"><img src="'+t+'" alt="" style="display:inline-block;width: 100%;height: 100%"/></a>');
             for(var i=1;i<data.length-1;i++){
+                console.log(data.length);
                 var url=data[i].url;
                 var t=data[i].image;
                 var ul=$('.container_Bright');
-                var li=$('<li><a href="'+url+'" style="display:inline-block;width: 100%;height: 100%"><img src="'+t+'" alt="" style="display:inline-block;width: 100%;height: 100%"/></a></li>');
+                var li=$('<li name="'+i+'"><a href="'+url+'" style="display:inline-block;width: 100%;height: 100%"><img src="'+t+'" alt="" style="display:inline-block;width: 100%;height: 100%"/></a></li>');
                 $(ul).append(li);
             };
-            //console.log(data[data.length-1]);
             var url=data[data.length-1].url;
             var t=data[data.length-1].image;
             //console.log(t);
             //console.log(url);
             var end=$('<li class="morepro"><a href="'+url+'" style="display:inline-block;width:167px;height:101px"><img src="'+t+'" alt="" style="display:inline-block;width: 100%;height: 100%"/></a></li>');
-            var end2=$('<li style="background-color:white;"><a href="'+url+'" style="color:#353526;display:inline-block;text-align:center;width:167px;height:101px;display:inline-block;line-height:100px">更多品牌服务商&nbsp;>></a><li>');
-            $(ul).append(end);
+            var end2=$('<li  style="background-color:white;"><a href="'+url+'" style="color:#353526;display:inline-block;text-align:center;width:167px;height:101px;display:inline-block;line-height:100px">更多品牌服务商&nbsp;>></a><li>');
+            //$(ul).append(end);
             $(ul).append(end2);
         },
         error:function(data){
@@ -336,16 +341,22 @@ $(function(){
                 if(i<(data.length)/2){
                     var ul=$('.container_Cheader');
                     var url=data[i].url;
+                    var url2='https://www.sina.com/';
                     var t=data[i].image;
                     var li=$('<li class="hoveryg"><div class="container_Cheader_top"><p>开办公司</p></div><div class="container_Cheader_con"><h5><a href="'+url+'">公司注册</a></h5><p><a href="'+url+'">更多优惠等着你</a></p><img src="'+t+'" height="68" width="101" alt="" /></div></li>');
                     $(ul).append(li);
+                    $(li).on("click",function(){
+                        window.location.href=''+url+'';
+                    })
                 }else{
                     var ul=$('.container_Cbottom');
-                    var url=data[i].url;
                     //console.log(url);
                     var t=data[i].image;
                     var li=$('<li class="hoveryg"><div class="container_Cheader_con"><h5><a href="'+url+'">公司注册</a></h5><p><a href="'+url+'">更多优惠等着你</a></p><img src="'+t+'" height="68" width="101" alt="" /></div></li>');
                     $(ul).append(li);
+                    $(li).on("click",function(){
+                        window.location.href=''+url+'';
+                    })
                 }
             };
         },
@@ -401,7 +412,7 @@ $(function(){
                 $(".ad_li_2").eq(j).css("background", "url("+data[1][j][0].class_img+") no-repeat bottom;");
 
                 for (var v = 0; v < data[1][j].length; v++) {
-                    var a=$('<a href="../register/register.html?two_id='+data[1][j][v].class_id+'">'+data[1][j][v].name+'</a>');
+                    var a=$('<a class="asdf" href="../register/register.html?two_id='+data[1][j][v].class_id+'">'+data[1][j][v].name+'</a>');
                     $(".ad_li_2").eq(j).append(a);
 
                 }
@@ -419,10 +430,15 @@ $(function(){
                     if(data[2][m][z].linnkurl.length==1){
                         $(".link").html('<a href="'+data[2][m][z].linnkurl[0].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[0].name+'</a>')
                     }else{
-                        $(".link").html('<a href="'+data[2][m][z].linnkurl[0].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[0].name+'</a> &nbsp;&nbsp;| <a href="'+data[2][m][z].linnkurl[1].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[1].name+'</a>')
+                        $(".link").html('<a href="'+data[2][m][z].linnkurl[0].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[0].name+'</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="'+data[2][m][z].linnkurl[1].href+'" style="display: inline-block;text-decoration: none;color:#626262">'+data[2][m][z].linnkurl[1].name+'</a>')
                     }
 
                 }
+                    $(".hoveryg>p").on("click",function(){
+                        window.location.href='../register/register.html?text='+$(this).text()+'';
+                        //return false;
+                    });
+
                 }
             }
             //更改商品模块标题背景色
@@ -951,3 +967,15 @@ $(function(){
 
 
 
+
+$("body").ready(function(){
+    $(".pangimg_user").on("click",function(){
+        window.location.href='../user/user.html';
+    });
+    $(".pangimg_recode").on("click",function(){
+        window.location.href='../mylist/mylist.html';
+    });
+    $(".pangimg_help").on("click",function(){
+        window.location.href='../help/help.html';
+    });
+});

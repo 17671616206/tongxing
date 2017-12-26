@@ -12,7 +12,8 @@ body{font-family: "微软雅黑";}
     background-color: #EBF7FB;
     padding: 0px 0px 60px;
 }
-.carousel{height: 500px;padding: 0px;margin-top: -10px;}
+.banner-bottomc>li:nth-child(4)>a{color: #478cc9;}
+.carousel{height: 500px;padding: 0px;/*margin-top: -10px;*/}
 .item,.carousel-inner{height: 500px;}
 .zheng{
     background-color: white;

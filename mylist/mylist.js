@@ -86,9 +86,9 @@ setTimeout(function(){
                     if(data[i].status=="未付款"){
                         //var goodsimg = eval('(' + data[i].goodsimg + ')');
                         var t=data[i].goodsimg;
-                        var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">付款</a></li></ul></div>');
+                        var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="../pay/pay.html?order_ids='+data[i].ordernum+'" class="btn btn-sm btn-danger">付款</a></li></ul></div>');
                     }else{
-                        var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">评价</a><!--<a href="" class="btn btn-sm btn-info">晒单</a>--></li></ul></div>');
+                        var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">评价1</a><!--<a href="" class="btn btn-sm btn-info">晒单</a>--></li></ul></div>');
                         $(".list_wai1").append(list);
                         //console.log(2);
                     }
@@ -96,8 +96,31 @@ setTimeout(function(){
                 }
             }else{
                 var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-4">您还没有下过订单<span style="color:#333;"></span></li><li class="col-md-2"></li></ul></div>');
-                $(".list_wai1").append(list);
-            }
+            }                $(".list_wai1").append(list);
+
+
+            //付款
+            //$(".btn-danger").on("click",function(){
+            //$(".btn-danger").on("click",function(){
+            //    //console.log(20);
+            //    console.log($(this).parents(".list_wai2").find(".list_wai span").text());
+            //    var order=$(this).parents(".list_wai2").find(".list_wai span").text();
+            //    $.ajax({
+            //        url:"http://dz.tx178178.com/index.php?m=api&c=GoodsInfo1&a=orderInfo",
+            //        type:"post",
+            //        dataType:"json",
+            //        data:{
+            //            user_id:user_id,
+            //            order:order
+            //        },
+            //        success:function(data){
+            //            if(data!=="0"){
+            //                window.location.href='../pay/pay.html?order_id='+data+'';
+            //            }
+            //        }
+            //    });
+            //    //console.log($(this).index());
+            //});
 
 
         },
@@ -129,7 +152,7 @@ setTimeout(function(){
                 panging=3;
                 cut(panging);
             }
-            if($(this).text()=="已退货"){
+            if($(this).text()=="已退款"){
                 console.log($(this).text());
                 panging=4;
                 cut(panging);
@@ -157,14 +180,22 @@ setTimeout(function(){
                 for (var i = 0; i < data.length; i++) {
                     var t=data[i].goodsimg;
                     if(data[i].status=="未付款"){
-                        var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">付款</a></li></ul></div>');
+                        var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="../pay/pay.html?order_ids='+data[i].ordernum+'" class="btn btn-sm btn-danger">付款</a></li></ul></div>');/*../pay/pay.html*/
                     }else{
-                        if(data[i].status=="已退款"){
-                            var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><!--<li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">评价</a><a href="" class="btn btn-sm btn-info">晒单</a></li>--></ul></div>');
+                        if(data[i].status=="已付款"){
+                            var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">申请退款</a><!--<a href="" class="btn btn-sm btn-info">晒单</a>--></li></ul></div>');
                             $(".list_wai1").append(list);
                         }else{
-                            var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">评价</a><!--<a href="" class="btn btn-sm btn-info">晒单</a>--></li></ul></div>');
-                            $(".list_wai1").append(list);
+                            if(data[i].status=="已完成"){
+                                var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><a href="" class="btn btn-sm btn-danger">评价</a><!--<a href="" class="btn btn-sm btn-info">晒单</a>--></li></ul></div>');
+                                $(".list_wai1").append(list);
+                            }else{
+                                if(data[i].status=="已退款"){
+                                    var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-5">'+data[i].ordertime+'&nbsp;&nbsp;订单号：<span style="color:#333;">'+data[i].ordernum+'</span></li><li class="col-md-2">'+data[i].goodsname+'</li></ul><ul class="col-md-12 list_content"><li class="col-md-4"><div class="list_content_imgz"><img class="list_content_img" src="'+t+'" alt=""/></div><div class="list_content_text"><span style="display: inline-block;width: 184px;height: 68px;overflow: hidden">'+data[i].goodsinfo+'</span></div></li><li class="col-md-2">×1</li><li class="col-md-1">'+data[i].address_name+'</li><li class="col-md-1">'+data[i].goods_num+'元</li><li class="col-md-2">'+data[i].status+'</li><li class="col-md-2 button"><!--<a href="" class="btn btn-sm btn-danger">评价</a>--><!--<a href="" class="btn btn-sm btn-info">晒单</a>--></li></ul></div>');
+                                    $(".list_wai1").append(list);
+                                }
+                            }
+
                         }}
 
                     $(".list_wai1").append(list);
@@ -173,6 +204,13 @@ setTimeout(function(){
                     var list=$('<div class="col-md-12 list_wai2"><ul class="col-md-12 list_wai list_content1"><li class="col-md-4">您还没有下过订单<span style="color:#333;"></span></li><li class="col-md-2"></li></ul></div>');
                     $(".list_wai1").append(list);
                 }
+
+
+                //付款
+                $(".btn-danger").on("click",function(){
+                    console.log(20);
+                    console.log($(this).val());
+                });
 
             },
             error:function(data){

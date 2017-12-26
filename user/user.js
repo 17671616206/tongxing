@@ -6,28 +6,7 @@ $(function(){
     $("#header").load("../home/header.html");
     $("#banleft").load("../public/banleft.html");
     $("#footer").load("../company/footer.html");
-    //var data = [
-    //    {id:'1',money:'485',text:'注销银行基本账户',num:'85421'},
-    //    {id:'2',money:'485',text:'注销银行基本账户',num:'85421'},
-    //    {id:'3',money:'485',text:'注销银行基本账户',num:'85421'},
-    //    {id:'4',money:'485',text:'注销银行基本账户',num:'85421'},
-    //    {id:'5',money:'485',text:'注销银行基本账户',num:'85421'},
-    //    {id:'6',money:'485',text:'注销银行基本账户',num:'85421'},
-    //    {id:'7',money:'485',text:'注销银行基本账户',num:'85421'},
-    //    {id:'8',money:'485',text:'注销银行基本账户',num:'85421'},
-    //]
-    //$("product_box").click(function(){
-    //    console.log(111)
-    //})
 
-    //for(var i=0;i<data.length;i++){
-    //    for(var j = 0;j<9;j++){
-    //        var product = $('<div class="product_box"></div>');
-    //        $(product).html('<div class="product_img"><img src="" alt=""/></div><div class="product_bottom_box"><div class="product_money">¥' +
-    //        '<span class="product_red">'+data[i].money+'</span>起</div><div class="product_cancel">'+data[i].text+'</div><div>' +
-    //        '<span class="product_grey">成交量</span><span class="product_blue">'+data[i].num+'笔</span></div></div>')
-    //    }
-    //}
 });
 
 
@@ -60,10 +39,9 @@ function GetQueryString(name)
 $.ajax({
     type:"post",
     url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeOne",
-    dataType:"text",
+    dataType:"json",
     data:{user_id:user_id},
     success:function(data){
-        var data = eval('(' + data + ')');//把字符串转化为数组
         //console.log(data.userimg);
         $(".user_camera>a").html('<img src="'+data.userimg+'" class="picter">');
         $(".came_right>div").eq(0).text(data.username);
@@ -126,6 +104,48 @@ $.ajax({
             $(".order_info").append(orderli);
         }
         }
+
+
+        //付款部分
+        $(".tabel_info1").on("click",function(){
+            //console.log(20);
+            //console.log($(this).parents(".order_info_li").find(".left span").eq(1).text());
+            var order=$(this).parents(".order_info_li").find(".left span").eq(1).text().split("：")[1];
+            //order=order.split("：")[1];
+            console.log(order);
+            window.location.href='../pay/pay.html?order_id='+order+'';
+            //console.log(order);传订单ID才会成功
+
+        });
+        //取消订单部分
+        $(".tabel_info2").on("click",function(){
+            var order=$(this).parents(".order_info_li").find(".left span").eq(1).text().split("：")[1];
+            var con;
+            con=confirm("是否确定取消订单？");
+            if(con==true){
+                $.ajax({
+                    url:"http://dz.tx178178.com/index.php?m=api&c=Ordersn&a=cancelOrder",
+                    type:"post",
+                    dataType:"json",
+                    data:{
+                        //user_id:user_id,
+                        order:order
+                    },
+                    success:function(data){
+                        console.log(data);
+                        if(data!=="0"){
+                            //window.location.href='../pay/pay.html?order_id='+data+'';
+                            if(data.state=="1"){
+                                alert("订单取消成功！");
+                                window.location.href='user.html';
+                            }
+                        }
+                    }
+                });
+            }
+
+
+        });
     },
     error:function(data){
         console.log("错误的"+data)
@@ -138,20 +158,16 @@ $.ajax({
 var region=1;
 $.ajax({
     type:"post",
-    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userCenterHomeThree",
-    dataType:"text",
+    url:"http://dz.tx178178.com/index.php?m=api&c=User&a=collecGoods",
+    dataType:"json",
     data:{
-        user_id:user_id,
+        id:user_id,
         region:region
     },
     success:function(data){
-        var data = eval('(' + data + ')');//把字符串转化为数组
         var product=$(".product").eq(0);
-        for (var k = 0; k < data.length; k++) {
-            var imgg=data[k].goodsimg;
-            imgg=eval('(' + imgg + ')');
-            imgg=imgg[0];
-            var contains=$('<div class="product_box"><a href="../company/company.html?goods_id='+data[k].goodsid+'" style="display: inline-block;width: 100%;height: 100%"><div class="product_img"><img src="'+imgg+'" alt=""/></div><div class="product_bottom_box"><div class="product_money">¥<span class="product_red">'+data[k].price+'</span>起</div><div class="product_cancel">'+data[k].goodsname+'</div><div><span class="product_grey">成交量</span><span class="product_blue">'+data[k].solled+'笔</span></div></div></a></div>');
+        for (var k = 0; k < data.list.length; k++) {
+            var contains=$('<div class="product_box"><a href="../company/company.html?goods_id='+data.list[k].goodsid+'" style="display: inline-block;width: 100%;height: 100%"><div class="product_img"><img src="'+data.list[k].img+'" alt=""/></div><div class="product_bottom_box"><div class="product_money">¥<span class="product_red">'+data.list[k].price+'</span>起</div><div class="product_cancel">'+data.list[k].goods_name+'</div><div><span class="product_grey">成交量</span><span class="product_blue">'+data.list[k].volume+'笔</span></div></div></a></div>');
             $(product).append(contains);
 
         }
@@ -165,6 +181,7 @@ $.ajax({
 
 var user_id=localStorage.getItem("user_id");
 //猜你喜欢部分
+console.log(222222222);
 $.ajax({
     url:"http://dz.tx178178.com/index.php?m=api&c=User&a=userLove",
     type:"post",
@@ -173,7 +190,7 @@ $.ajax({
         id:user_id
     },
     success:function(data) {
-        //console.log(data.length);
+        console.log(data.length);
         var box=$("#product2");
         for (var i = 0; i < data.length; i++) {
             var goods=$('<div class="product_box"><a href="../company/company.html?goods_id='+data[i].goods_id+'"><div class="product_img"><img src="'+data[i].imgs+'" alt=""/></div><div class="product_bottom_box"><div class="product_money">¥<span class="product_red">'+data[i].price+'</span>起</div><div class="product_cancel">'+data[i].goods_name+'</div></div></a></div>');

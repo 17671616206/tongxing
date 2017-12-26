@@ -2,12 +2,12 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>登录注册同兴一站办</title>
+    <title>登录注册服务团队</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="login.css"/>
+    <link rel="stylesheet" href="complete.css"/>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="login.js"></script>
+    <script src="complete.js"></script>
     <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script type="text/javascript">
 //        document.write(returnCitySN["cip"]+','+returnCitySN["cname"]);
@@ -23,7 +23,7 @@
                 <div class="left">
                     <a class="left login_logo" href="../home/content.html"></a>
                     <div class="header_xian"></div>
-                    <div class="header_come">欢迎登录</div>
+                    <div class="header_come">欢迎注册</div>
                 </div>
                 <div class="right">
                     <div class="header_tel">
@@ -40,67 +40,18 @@
 <div class="col-md-12 login_banner">
     <div class="container">
         <div class="banner_box">
-            <div class="banner_login">
-                <div class="login" id="login">登录</div>
-                <div class="register" id="register">注册</div>
-            </div>
+            <div class="banner_login">服务团队注册</div>
             <!--登录内容开始-->
             <div class="content">
                 <div class="banner_user">
                     <div class="man">
-                        <img src="../images/user.png" alt=""/>
-                    </div>
-                    <div class="user_inp">
-                        <input type="text" id="user" name="user" class="user_input" placeholder="用户名/手机号/邮箱"/>
-                    </div>
-                </div>
-                <div class="banner_pass">
-                    <div class="man">
-                        <img src="../images/suo.png" alt=""/>
-                    </div>
-                    <div class="user_inp">
-                        <input type="password" class="user_input" placeholder="密码"/>
-                    </div>
-                </div>
-                <div class="auto">
-                    <div class="auto_left">
-                        <input type="checkbox"/>
-                        <span>自动登录</span>
-                    </div>
-                    <div class="centers"></div>
-                    <div class="auto_right"><a href="forgetpass.html">忘记密码？</a></div>
-                </div>
-                <div class="login_btn">
-                    <button id="loginbtn" style="width:100%;height:45px;">立即登录</button>
-                </div>
-                <div class="login_three">
-                    <div class="left">第三方登录：</div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-            <!--登录内容结束-->
-            <!--注册内容开始-->
-            <div class="content2">
-                <div class="banner_user mail2">
-                    <div class="man">
                         <img src="../images/phone.png" alt=""/>
                     </div>
                     <div class="user_inp">
-                        <input type="text" id="tel" class="user_input" placeholder="手机号"/>
+                        <input type="text" id="user" name="user" class="user_input" placeholder="请输入手机号"/>
                     </div>
                 </div>
-                <div class="banner_user2 phone2">
-                    <div class="man">
-                        <img src="../images/mail.png" alt=""/>
-                    </div>
-                    <div class="user_inp">
-                        <input type="text" id="mail" class="user_input" placeholder="邮箱"/>
-                    </div>
-                </div>
+
                 <div class="fication">
                     <div class="left fication_le2">
                         <div class="man">
@@ -110,53 +61,28 @@
                             <input id="code" type="text" class="user_input2" placeholder="验证码"/>
                         </div>
                     </div>
-                    <div class="left fication_le">
-                        <input id="getcode" type="button" value="获取验证码" disabled="true"/>
-                    </div>
+                    <input class="left fication_le" type="button" value="获取验证码"  id="getcode" disabled="true">
+
+                    </input>
                 </div>
+
                 <div class="banner_pass">
                     <div class="man">
                         <img src="../images/suo.png" alt=""/>
                     </div>
                     <div class="user_inp">
-                        <input id="password" type="password" class="user_input" placeholder="密码"/>
+                        <input type="password" class="user_input" placeholder="密码"/>
                     </div>
                 </div>
-                <div class="fication">
-                    <div class="left fication_le2">
-                        <div class="man">
-                            <img src="../images/yaoqing.png" alt=""/>
-                        </div>
-                        <div class="user_inp2">
-                            <input id="invite" type="text" class="user_input2" placeholder="邀请码"/>
-                        </div>
-                    </div>
-                    <div class="left fication_no">注：此项可不填写</div>
-                </div>
-                <div class="auto">
-                    <div class="auto_left">
-                        <input type="checkbox" checked/>
-                        <span>我已阅读并接受</span>
-                    </div>
-                    <div class="auto_right2"><a href="">《同兴一站办网注册协议》</a></div>
+                <div class="auto">已有账号？去 &nbsp;&nbsp;<a href="../login/login.html">登陆</a>
+                    <span class="joininfo" style="color: red"></span>
                 </div>
                 <div class="login_btn">
-                    <span class="joininfo" style="color: red"></span>
-                    <input style="display: inline-block;width: 100%;height: 45px" type="button" id="rebtn" value="立即注册"/>
-                    <input type="button" id="mabtn" value="立即注册"/>
+                    <button id="loginbtn" style="width:100%;height:45px;">立即注册</button>
                 </div>
-                <!--<div class="login_three">-->
-                    <!--<div class="left">第三方登录：</div>-->
-                    <!--<ul>-->
-                        <!--<li></li>-->
-                        <!--<li></li>-->
-                        <!--<li></li>-->
-                    <!--</ul>-->
-                    <!--<div class="login_phone mail">或<span>邮箱注册</span></div>-->
-                    <!--<div class="login_phone2 phone">或<span>手机号注册</span></div>-->
-                <!--</div>-->
+
             </div>
-            <!--注册内容结束-->
+            <!--登录内容结束-->
             <div class="login_footer">
                 <div class="footer_img"></div>
                 <div class="footer_down">下载APP，服务尽在掌握！</div>

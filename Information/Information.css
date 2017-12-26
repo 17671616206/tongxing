@@ -6,12 +6,17 @@ body{font-size:12px; font-family:'微软雅黑';color:#333333; background:#FAFAF
 ul{list-style:none;margin-bottom: 0px;}
 a{text-decoration:none;}
 a:hover{text-decoration:none;}
+.banner-bottomc>li:nth-child(2)>a{color: #478cc9;}
 .clearfix:after{content:"";display:block;height:0px;line-height:0px;clear:both; visibility:hidden;}
 .clearfix {zoom:1;}
 .left{float:left;}
 .right{float:right;}
 .Information_title{font-size: 14px;color: #333333;font-weight: bold;}
-
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1200px;
+}
 /*Information*/
 .Information_tip{height:40px; line-height:40px;}
 .Information_con{width:100%; border:1px solid #DCDCDC; border-radius:6px; overflow:hidden;}

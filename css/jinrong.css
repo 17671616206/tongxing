@@ -8,6 +8,7 @@ body{font-family: "微软雅黑";}
     padding-right: 0px;
     width: 1200px;
 }
+.banner-bottomc>li:nth-child(8)>a{color: #478cc9;}
 .register{
     background-color: #FAFAFA;
     padding: 0px 0px 60px;
